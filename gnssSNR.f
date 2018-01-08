@@ -1,6 +1,7 @@
       program gnssSNR
       implicit none
 c     Kristine Larson 15jul27
+c     version updated on 18jan08
 c     uses sp3 file to compute azimuth and elevation angle
 c     all satellite signals
 c     17oct15 added orbit pointer
