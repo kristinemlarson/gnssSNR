@@ -1,0 +1,2 @@
+#!/bin/csh
+gnssSNR.e smm32960.17o  out-smm3A gbm19721.sp3 98
