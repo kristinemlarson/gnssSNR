@@ -24,11 +24,15 @@ c     default nsat value of 0
 c     added pointer array for orbits
 c
 c     17nov03 returns number of time epochs now
+c     18may14 read the header date and ensure that only
+c     data from that date are used (sp3 files from CODE had
+c     had two midnites in them).
       include 'local.inc'
       character*80 inputfile, line, outputfile
       character*2 chr
       integer satnames(maxsat),nsat, gpsweek, prn, i, j, k, 
-     .  time, itime(5), gps_weeks(np), msec, sec, ios,newname
+     .  time, itime(5), gps_weeks(np), msec, sec, ios,newname,
+     .  hdr_mm, hdr_dd
       real*8 x,y,z, XYZ(maxsat,np,3), gps_seconds(np), gpssecond
       character*1 duh/'+'/
       character*1 satID(maxsat), constell
@@ -63,12 +67,18 @@ c
         print*, inputfile(1:50)
         call exit
       endif
+c     #cP2015 12 30  0  0  0.00000000      97 d+D   IGb08 FIT AIUB
 c     skip first two lines of the header-  
+c     now save the month and day of the file
       read(12,'(a80)') line
       print*, 'First epoch of SP3 file ', line
       print*, 'Number of epochs', line(37:39)
       READ (line(37:39), '(I3)'), nepochs
-      print*, nepochs
+      READ (line(9:10), '(I2)'), hdr_mm 
+      READ (line(12:13), '(I2)'), hdr_dd 
+      print*, 'num epochs in header', nepochs  
+      print*, 'mm and dd in header', hdr_mm, hdr_dd
+
       read(12,'(a80)') line
       read(12,'(1x,i5,3x, 17(a1,i2) )')nsat, 
      .     (satID(i), satnames(i), i=1,17)
@@ -79,7 +89,7 @@ c     skip first two lines of the header-
       s1 = 86
       s2 = 102
 113   read(12,'(a80)') line
-      print*, line
+c     print*, line
       if (line(1:2) .eq. '+ ') then
         print*,'found another sat line'
         read(line,'(9x, 17(a1,i2))')(satID(i),satnames(i), i=s1,s2)
@@ -96,6 +106,7 @@ c       print*,'qual flag'
 
       call fill_pointer(nsat,satID,satnames,haveorbit,ipointer)
 c      start your counter for number of epochs
+c     I think this also means you have read the header
       time = 1
 15    continue
       if (line(1:1).eq.'*') then
@@ -105,34 +116,46 @@ c       decode your time tag
         read(line(12:13), '(i2)') itime(3)
         read(line(15:16), '(i2)') itime(4)
         read(line(18:19), '(i2)') itime(5)
-        call convert_time(itime,sec, msec, gpsweek, gpssecond)
-c       now need to read nsat lines to get the coordinates of the satellite
-        do i=1,nsat
-         read(12,'(a80)') line
-         read(line(2:2),'(a1)') constell
-         read(line(3:46),*)prn,x,y,z
-c        change prn to new system
-         call newSat(constell,prn,newname)
-         prn = newname
+        if ( (itime(2).eq.hdr_mm) .and. (itime(3) .eq.hdr_dd)) then
+c         print*,'found a good time tag'
+          call convert_time(itime,sec, msec, gpsweek, gpssecond)
+c         now need to read nsat lines to get the coordinates of the satellite
+          do i=1,nsat
+            read(12,'(a80)') line
+            read(line(2:2),'(a1)') constell
+            read(line(3:46),*)prn,x,y,z
+c           change prn to new system
+            call newSat(constell,prn,newname)
+            prn = newname
 c        now using index i instead of PRN number to store data
-         XYZ(i,time,1) = x
-         XYZ(i,time,2) = y
-         XYZ(i,time,3) = z 
-         gps_weeks(time) = gpsweek
-         gps_seconds(time) = gpssecond
-        enddo
-c       read the next line - it hsould be a time tag
+            XYZ(i,time,1) = x
+            XYZ(i,time,2) = y
+            XYZ(i,time,3) = z 
+           gps_weeks(time) = gpsweek
+           gps_seconds(time) = gpssecond
+         enddo
+         time = time + 1
+        else
+          print*,'found an extra midnite timetag'
+          print*,'could skip lines, but exiting instead'
+          goto 55
+        endif
+c       read the next line - it should be a time tag
         read(12,'(a80)') line
-        time = time + 1
+c       increment the time variable
         if (line(1:3).eq.'EOF') goto 55
         if (time >np) then
-          print*,'your sp3 file exceeds ', np, ' values'
+          print*,'your sp3 file exceeds max number ', np, ' values'
           print*,'this is bad - exiting the subroutine'
           goto 55
         endif
       endif
       goto 15
 55    continue
+c     subtract one because of the CODE midnite issue
+      nepochs = time - 1
+      print*, 'RETURNING epochs: ', nepochs
+c     you are done reading the file
       close(12)
       print*, 'exiting the sp3 reading code'
 56    continue
@@ -182,7 +205,7 @@ c             ipointer tells you where it is in the sp3 file
       do i =1, nsat
         call newSat(satID(i), satnames(i),newname)
 c       was mostly for debugging
-        write(6,'(a1, i2, 1x, i3)') satID(i), satnames(i), newname
+c       write(6,'(a1, i2, 1x, i3)') satID(i), satnames(i), newname
         satnames(i) = newname
         haveorbit(newname) = .true.
         ipointer(newname) = i

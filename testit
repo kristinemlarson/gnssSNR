@@ -1,2 +1,14 @@
 #!/bin/csh
-gnssSNR.e smm32960.17o  out-smm3A gbm19721.sp3 98
+# allow more than 36 satellites and Beidou
+gnssSNR.e  at013620.18o.all at013620.18.snr98   /data/testing/gbm20335.sp3  98
+gnssSNR.e  at010050.19o at00050.19.snr98   /data/testing/gbm20346.sp3 98
+gnssSNR.e  tukt1370.18o  tukt1370.18.snr98 /data/testing/gbm20014.sp3 98 
+gnssSNR.e  tukt1350.18o  tukt1350.18.snr98 /data/testing/gbm20012.sp3 98 
+gnssSNR.e  tukt0010.18o  tukt0010.18.snr98 /data/testing/gbm19821.sp3 98 
+gnssSNR.e  tukt1660.18o  tukt1660.18.snr98 /data/testing/gbm20055.sp3  98
+gnssSNR.e  ven12970.18ox  ven12970.18.snr98 /data/testing/gbm20243.sp3  98
+gnssSNR.e  at012740.18o  at012740.18.snr98 /data/testing/gbm20211.sp3  98
+gnssSNR.e  at011820.18.8obs at011820.18.snr98 /data/testing/gbm20080.sp3  98
+gnssSNR.e  pie10010.18o  pie10010.18.snr98 /data/testing/gbm19821.sp3 98
+gnssSNR.e  p0410010.18o  p0410010.18.snr50 /data/testing/gbm19821.sp3 50
+gnssSNR.e  p7092590.17o  p7092590.17.snr98 /data/testing/grm19666.sp3 98

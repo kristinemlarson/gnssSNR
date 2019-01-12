@@ -191,7 +191,8 @@ c
 
 
 
-      subroutine read_header(fileID,rawf,xrec,yrec,zrec,iobs,nobs,iymd)
+      subroutine read_header(fileID,rawf,xrec,yrec,zrec,
+     .  iobs,nobs,iymd,station)
       implicit none
       include 'local.inc'
       integer  i, fileID
@@ -199,10 +200,13 @@ c
       character*80 line, outline, dynfmt, dynfmt2
       logical  endofheader 
       integer nobs,iobs(maxsat), iymd(3), ios
-      character*2  key(maxsat)
+      character*2 key(maxsat)
+      character*4 station
       real*8 xrec, yrec, zrec
 c     returns receiver coordinates
-
+c     station name is empty to start with
+c     returned to main code
+      station = '    ' 
       endofheader = .false.
 
       open(fileID,file=rawf, status='old',iostat=ios)
@@ -212,14 +216,23 @@ c     returns receiver coordinates
         call exit(0)
       endif
       do while (.not.endofheader)
+c     KL 18mar05, fixed bug on nobs
         read (fileID,'(a80)') line
         if (line(61:80).eq.'# / TYPES OF OBSERV') then
           read(line, fmt='(I6)') nobs
-          if (nobs .lt. 11) then
+c         exit if more than 20 observables
+          if (nobs.gt.20) then
+             print*,'this code only supports <=20 observ types'
+             call exit
+          endif
+c   KL 19jan09 allowing more lines of OBS types
+c         first line has up to 9 OBS types
+          if (nobs .lt. 10) then
             write(dynfmt, fmt='(A, I3.3, A)')
      +                      "(6X,", nobs, "(4X,A2))"
             read(line, fmt=dynfmt) (key(i), i=1,nobs)
-          else
+c         between 10-18 OBS types
+          elseif (nobs.gt.9.and.nobs.le.18) then
             write(dynfmt, fmt='(A, I3.3, A)')
      +                      "(6X,", 9, "(4X,A2))"
             read(line, fmt=dynfmt) (key(i), i=1,9)
@@ -228,6 +241,26 @@ c           read the next line
             write(dynfmt, fmt='(A, I3.3, A)')
      +                      "(6X,", nobs-9, "(4X,A2))"
             read(line, fmt=dynfmt) (key(i), i=10,nobs)
+c           this is more than 18 OBS types
+          else
+c           first line
+            write(dynfmt, fmt='(A, I3.3, A)')
+     +                      "(6X,", 9, "(4X,A2))"
+            read(line, fmt=dynfmt) (key(i), i=1,9)
+
+c           read the next line
+            read (fileID,'(a80)') line
+c           reassign this second line
+            write(dynfmt, fmt='(A, I3.3, A)')
+     +                      "(6X,", 9, "(4X,A2))"
+            read(line, fmt=dynfmt) (key(i), i=10,18)
+
+c           read the third line
+            read (fileID,'(a80)') line
+            write(dynfmt, fmt='(A, I3.3, A)')
+     +                      "(6X,", nobs-18, "(4X,A2))"
+            read(line, fmt=dynfmt) (key(i), i=19,nobs)
+
           endif
           print*, 'NUMBER OF OBSERVABLES ', nobs
         else if (line(61:80).eq.'APPROX POSITION XYZ') then
@@ -241,6 +274,9 @@ c           read the next line
         else if (line(61:77).eq.'TIME OF FIRST OBS') then
           read(line, fmt= '(3i6)') iymd(1), iymd(2), iymd(3)
           print*, 'Time of first Obs: ', iymd
+        else if (line(61:71).eq.'MARKER NAME') then
+          read(line(1:4), fmt= '(a4)')  station
+          print*, 'Station name ', station
         endif
         if (line(61:73).eq.'END OF HEADER'.or.
      +       line(61:73).eq.'end of header'.or.
@@ -259,6 +295,9 @@ c           read the next line
           if (key(i).eq.'s1' .or. key(i).eq.'S1') iobs(6) = i
           if (key(i).eq.'s2' .or. key(i).eq.'S2') iobs(7) = i
           if (key(i).eq.'s5' .or. key(i).eq.'S5') iobs(8) = i
+          if (key(i).eq.'s6' .or. key(i).eq.'S6') iobs(9) = i
+          if (key(i).eq.'s7' .or. key(i).eq.'S7') iobs(10) = i
+          if (key(i).eq.'s8' .or. key(i).eq.'S8') iobs(11) = i
       enddo
       end
 
@@ -350,26 +389,38 @@ c     rearrange
 c     gps seconds, including non integer parts
       tc = dble(gpsseconds) + msec/1000.0
       end
-      subroutine pickup_snr(obs, iobs, itrack, s1, s2, s5)
+      subroutine pickup_snr(obs, iobs, itrack, s1, s2, s5,s6,s7,s8)
       implicit none
 c     make sure SNR data exist before trying
 c     to assign as index to a variable
 c     send it the entire variable information
-c     returns s1,s2,s5
+c     returns s1,s2,s5 etc
       include 'local.inc'
       real*8  obs(maxob,maxsat) 
       integer iobs(maxsat), itrack
-      real*8 s1, s2, s5
+      real*8 s1, s2, s5,s6,s7,s8
       s1 = 0
+      s2 = 0
+      s5 = 0
+      s6 = 0
+      s7 = 0
+      s8 = 0
       if (iobs(6).ne.0) then
         s1 = obs(iobs(6),itrack)
       endif
-      s2 = 0
       if (iobs(7).ne.0) then
         s2 = obs(iobs(7),itrack)
       endif
-      s5 = 0
       if (iobs(8).ne.0) then
         s5 = obs(iobs(8),itrack)
+      endif
+      if (iobs(9).ne.0) then
+        s6 = obs(iobs(9),itrack)
+      endif
+      if (iobs(10).ne.0) then
+        s7 = obs(iobs(10),itrack)
+      endif
+      if (iobs(11).ne.0) then
+        s8 = obs(iobs(11),itrack)
       endif
       end

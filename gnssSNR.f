@@ -5,8 +5,20 @@ c     version updated on 18jan08
 c     uses sp3 file to compute azimuth and elevation angle
 c     all satellite signals
 c     17oct15 added orbit pointer
+c     18may14 checked to make sure sp3 file doesn't have data
+c     from two different days
+c      
+c     18oct01 added S6,S7,S8, currently storing S6 in column 6
+c     and S7 and S8 are in new columns: 10 and 11
+c     This helps with Galileo
+c     column 5 is still edot
+c     column 9 is still S5
+c     column 7 and 8 are S1 and S2 
+c 
+c     18oct16 increased number of satellites allowed at any epoch to 48
+c     this allows multiple constellations without having to make separate files
       include 'local.inc'
-      integer stderr 
+      integer stderr
       parameter (stderr=6)
       character*80 inline, line, sp3file
       character*60 rawfilename, outfilename, broadfile
@@ -14,22 +26,23 @@ c     17oct15 added orbit pointer
       character*2  key(maxsat), prn_pickc
       character*1 char, satID(maxsat)
       integer  nobs, itime(5), prn(maxsat), numsat, flag, sec,
-     +   msec, lli(maxob,maxsat), snr(maxob,maxsat), iprn,
-     .   ios, itrack, L2Ctracking,j, i, iobs(maxsat), isec, 
+     +   msec, lli(maxob,maxsat), iprn,
+     .   ios, itrack, L2Ctracking,j, i, iobs(maxsat), isec,
      .  gpsweek, ierr,  prn_pick, current_hour, fileIN, fileOUT,
      .  iymd(3), iyear, idoy, nepochs
-      real*8  obs(maxob,maxsat), tod,North(3), 
-     .   East(3), Up(3), azimuth, elev, staXYZ(3), tod_save, 
+      real*8  obs(maxob,maxsat), tod,North(3),
+     .   East(3), Up(3), azimuth, elev, staXYZ(3), tod_save,
      .   pi,s1,s2,s5,xrec, yrec, zrec, tc, l1,l2, Lat,Long,Ht,
-     .   edot,elev1,elev2, nxrec,nyrec, nzrec
+     .   edot,elev1,elev2, nxrec,nyrec, nzrec, s6, s7, s8
       logical eof, bad_point,useit, help, simon
 c     we assume there are only 96 temporal values in the sp3 file
-      integer sp3_gps_weeks(np),sp3_nsat,sp3_satnames(maxsat) 
+      integer sp3_gps_weeks(np),sp3_nsat,sp3_satnames(maxsat)
       real*8 sp3_XYZ(maxsat,np,3), sp3_gps_seconds(np),
      .  t9(9), x9(9), y9(9), z9(9)
       integer ipointer(maxGNSS)
-      logical haveorbit(maxGNSS), fsite
+      logical haveorbit(maxGNSS), fsite, debug
       nepochs = 96
+      debug = .false.
 c     set some defaults
 c     if you want edot, set this to true
       simon = .true.
@@ -46,12 +59,11 @@ c     read input files - rinex and output
       call getarg (3,sp3file)
       call getarg (4,prn_pickc)
 c     comment out for now
-c     call getarg (5,station)
 c     figure out which option is being requested
       READ (prn_pickc, '(I2)'), prn_pick
       write(stderr, *) 'Selection ', prn_pick
 c    read in the sp3file
-      call read_sp3_200sats(sp3file, sp3_gps_weeks, sp3_gps_seconds, 
+      call read_sp3_200sats(sp3file, sp3_gps_weeks, sp3_gps_seconds,
      .   sp3_nsat, sp3_satnames, sp3_XYZ,haveorbit,ipointer,nepochs)
       if (sp3_nsat .eq. 0) then
         print*, 'problem reading sp3file'
@@ -60,52 +72,69 @@ c    read in the sp3file
 
 c     read the header of the RINEX file, returning station coordinates
 c     and an observable array and nobs, number of observables
-      call read_header(fileIN,rawfilename, xrec,yrec,zrec, 
-     .  iobs,nobs,iymd)
+      call read_header(fileIN,rawfilename, xrec,yrec,zrec,
+     .  iobs,nobs,iymd, station)
+      print*,'number of obs main code', nobs
 c     comment out for now.  should read station name
 c     from the receiver
-c     call moving_sites(station, iymd(1), iymd(2), iymd(3),
-c    .   nxrec,nyrec,nzrec,fsite)
+      call moving_sites(station, iymd(1), iymd(2), iymd(3),
+     .   nxrec,nyrec,nzrec,fsite)
       if (fsite) then
-        print*, 'use these new station coordinates'
+        print*, 'use variable model station coordinates'
         xrec = nxrec
         yrec = nyrec
         zrec = nzrec
         print*, xrec, yrec, zrec
       endif
-      if (iobs(7) .eq. 0 .and. iobs(6) .eq. 0) then
-        print*, 'no L1 and L2 SNR data - exiting '
+      if (nobs .gt. 20 .or. nobs .eq. 0) then
+        print*, 'This code currently only works for <= 20 obs types'
+        print*, 'Something is wrong'
         call exit(0)
       endif
-      if (nobs .gt. 15) then
-        print*, 'This code currently only works for <= 15 obs types'
-        call exit(0)
-      endif
+c     going to remove this - as phase are not really required
+c     helpful for finding L2C
+c      if (iobs(7) .eq. 0 .and. iobs(6) .eq. 0) then
+c       print*, 'no L1 and L2 SNR data - exiting '
+c       call exit(0)
+c     endif
+      print*, 'S1 location:', iobs(6)
+      print*, 'S2 location:', iobs(7)
+      print*, 'S5 location:', iobs(8)
+      print*, 'S6 location:', iobs(9)
+      print*, 'S7 location:', iobs(10)
+      print*, 'S8 location:', iobs(11)
+
 
       call envTrans(xrec,yrec,zrec,staXYZ,Lat,Long,Ht,North,East,Up)
 c     open output file
       open(fileOUT,file=outfilename, status='unknown')
       eof = .false.
-      do while (.not.eof) 
+      do while (.not.eof)
         inline = ' '
         read(fileIN,'(A80)', iostat=ios) inline
-        if (ios.ne.0) goto 99 
+        if (ios.ne.0) goto 99
         read(inline(1:32),'(5I3,X,I2,X,I3,4X,2I3)')
      +         (itime(i), i=1,5), sec, msec, flag, numsat
+        if (debug) then
+          print*, 'number of satellites ' ,numsat
+          print*, inline
+        endif
 c       seconds in the day
         tod = itime(4)*3600.0 + 60.0*itime(5) + sec
-        tod_save = tod
+c       print*, tod, tod_save
         if (tod.lt.tod_save) then
-c           'Time as written to this file is going backwards.'
+          print*, 'Time is going backwards.'
           bad_point = .true.
         else
           bad_point = .false.
         endif
+        tod_save = tod
 c       read the observation block
-        call read_block(fileIN, flag,inline,numsat,nobs,satID, 
-     .    prn,obs,snr,lli)
+        call read_block_gnss(fileIN, flag,inline,numsat,nobs,satID,
+     .    prn,obs,lli)
 c       flag 4 means it is a comment block, so that gets skipped
-        if (flag .ne. 4) then
+c       added that the point is good
+        if (flag .ne. 4 .and. .not.bad_point) then
 c         find out gpsweek and gpstime (tc)
           call convert_time(itime,sec, msec, gpsweek, tc)
           do itrack = 1, numsat
@@ -132,10 +161,13 @@ c               since i did time values 0.5 seconds apart, multiply by 2
                 edot =  2.d0*(elev2-elev)
               endif
 c             assign the SNR values to variables
-              call pickup_snr(obs, iobs, itrack, s1, s2, s5)
+              call pickup_snr(obs, iobs, itrack, s1, s2, s5,s6,s7,s8)
+              if (debug) then
+                print*, itrack, iprn, s1, s2, s5
+              endif
 c             write out to a file
               call write_gnss_to_file(fileOUT, iprn, tod,
-     .          s1,s2,s5,azimuth, elev,edot,prn_pick)
+     .          s1,s2,s5,azimuth, elev,edot,prn_pick,s6,s7,s8)
             else
 c             this can be comented out - kept as debugging, sanity check
 c             write(72,*)'no orbit for satellite', iprn, ' gpssec ',tc
@@ -148,4 +180,3 @@ c     close input and output files
       close(fileIN)
       close(fileOUT)
       end
-
