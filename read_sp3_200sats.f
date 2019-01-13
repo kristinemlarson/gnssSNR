@@ -73,9 +73,10 @@ c     now save the month and day of the file
       read(12,'(a80)') line
       print*, 'First epoch of SP3 file ', line
       print*, 'Number of epochs', line(37:39)
-      READ (line(37:39), '(I3)'), nepochs
-      READ (line(9:10), '(I2)'), hdr_mm 
-      READ (line(12:13), '(I2)'), hdr_dd 
+c     removed the commas that are not compliant with new fortran?
+      READ (line(37:39), '(I3)') nepochs
+      READ (line(9:10), '(I2)') hdr_mm 
+      READ (line(12:13), '(I2)') hdr_dd 
       print*, 'num epochs in header', nepochs  
       print*, 'mm and dd in header', hdr_mm, hdr_dd
 

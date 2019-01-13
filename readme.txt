@@ -1,3 +1,17 @@
+19jan10
+Various updates, including extending the number of allowed observable types to 20.
+(it was previously 15).
+We now allow up to 60 satellites at one epoch can be reported (up from 48).
+
+makefile now uses gfortran instead of local f77 command I had been using.
+
+Because of the size of RINEX files, I only provide a single test file with 
+only two epochs.  A sp3 file with signals from all four constellations is also 
+provided. 
+
+shellscript testit will show you the input and output of the code.
+
+-----------------
 18oct01 
 I added space for observables s6,s7,s8, I am currently storing s6 in column 6
 and s7 and s8 are in new columns: 10 and 11.  As with GPS, S5 for Galileo is still stored

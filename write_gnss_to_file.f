@@ -19,11 +19,15 @@ c     not interfere with my existing file structures at CU
           write(outID,112)
      .      prn, elev, az, tod, edot,s6, s1, s2,s5,s7,s8
         endif
-c     asked for all data > 5
+c         asked for all data > 5
       elseif (prn_pick.eq.88) then
         if (elev.ge.5) then
           write(outID, 112)
      .        prn, elev, az, tod, edot,s6, s1, s2,s5,s7,s8
+c       else
+c         satellites below 5 degrees
+c         write(6, 112)
+c    .        prn, elev, az, tod, edot,s6, s1, s2,s5,s7,s8
         endif
 c     all data < 10
       elseif (prn_pick.eq.50) then

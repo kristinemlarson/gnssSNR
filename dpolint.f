@@ -23,7 +23,9 @@
           hp=xa(i+m)-x
           w=c(i+1)-d(i)
           den=ho-hp
-          if(den.eq.0.d0)pause 'failure in polint'
+          if(den.eq.0.d0) then
+            print*, 'failure in polint'
+          endif
           den=w/den
           d(i)=hp*den
           c(i)=ho*den
