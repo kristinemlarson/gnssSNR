@@ -1,0 +1,330 @@
+     2.11           OBSERVATION DATA    M (MIXED)           RINEX VERSION / TYPE
+sbf2rin-13.2.0                          20181229 004257 UTC PGM / RUN BY / DATE 
+gfzrnx-1.08-7186    FILE CONVERSION     20190110 174541 UTC COMMENT             
+at01                                                        MARKER NAME         
+at01                                                        MARKER NUMBER       
+UNAVCO              UNAVCO                                  OBSERVER / AGENCY   
+3025329             SEPT POLARX5        5.2.0               REC # / TYPE / VERS 
+5732337004          TRM59800.00     SCIT                    ANT # / TYPE        
+ -2715528.1002  -881993.7322  5684289.1147                  APPROX POSITION XYZ 
+        0.0083        0.0000        0.0000                  ANTENNA: DELTA H/E/N
+SEPTENTRIO RECEIVERS OUTPUT ALIGNED CARRIER PHASES.         COMMENT             
+NO FURTHER PHASE SHIFT APPLIED IN THE RINEX ENCODER.        COMMENT             
+                                                            COMMENT             
+*********************************************************** COMMENT             
+*                 WARNING - FORMAT CONVERSION             * COMMENT             
+* ------------------------------------------------------- * COMMENT             
+*  The data values: observation, loss of lock (LLI) and   * COMMENT             
+*  signal strength (SSI) indicators are left as they are. * COMMENT             
+*    The LLI meaning differs between versions 2 and 3     * COMMENT             
+*    and the Interpretation of bit 1 and 2 has to be      * COMMENT             
+*                   used with caution !!!                 * COMMENT             
+*********************************************************** COMMENT             
+                                                            COMMENT             
+RINEX 3 -> 2 TYPE CONVERSION DETAILS:                       COMMENT             
+-------------------------------------                       COMMENT             
+   C S2I -> S2                                              COMMENT             
+   C S6I -> S6                                              COMMENT             
+   C S7I -> S7                                              COMMENT             
+-------------------------------------                       COMMENT             
+   E S1C -> S1                                              COMMENT             
+   E S5Q -> S5                                              COMMENT             
+   E S6C -> S6                                              COMMENT             
+   E S7Q -> S7                                              COMMENT             
+   E S8Q -> S8                                              COMMENT             
+-------------------------------------                       COMMENT             
+   G S1C -> S1                                              COMMENT             
+   G S2L -> S2                                              COMMENT             
+   G S5Q -> S5                                              COMMENT             
+-------------------------------------                       COMMENT             
+   R S1C -> S1                                              COMMENT             
+   R S2C -> S2                                              COMMENT             
+-------------------------------------                       COMMENT             
+                                                            COMMENT             
+     6    S1    S2    S5    S6    S7    S8                  # / TYPES OF OBSERV 
+   103                                                      # OF SATELLITES     
+   C01        5338        5760  5760                        PRN / # OF OBS      
+   C04        5760        5760  5760                        PRN / # OF OBS      
+   C06        2646        2643  2647                        PRN / # OF OBS      
+   C07        2640        2638  2640                        PRN / # OF OBS      
+   C08        2470        2470  2472                        PRN / # OF OBS      
+   C09        1968        1954  2007                        PRN / # OF OBS      
+   C10        1968        1954  1977                        PRN / # OF OBS      
+   C11        2405        2409  2415                        PRN / # OF OBS      
+   C12        2142        2139  2153                        PRN / # OF OBS      
+   C13        2057        2034  2056                        PRN / # OF OBS      
+   C14        2542        2541  2543                        PRN / # OF OBS      
+   C16        2395              2395                        PRN / # OF OBS      
+   C19        2123        2118                              PRN / # OF OBS      
+   C20        1935        1935                              PRN / # OF OBS      
+   C21        2578        2576                              PRN / # OF OBS      
+   C22        2551        2553                              PRN / # OF OBS      
+   C23        2005                                          PRN / # OF OBS      
+   C24        2442                                          PRN / # OF OBS      
+   C25        2018                                          PRN / # OF OBS      
+   C26        2531                                          PRN / # OF OBS      
+   C27        2388                                          PRN / # OF OBS      
+   C28        2284        2288                              PRN / # OF OBS      
+   C29         608                                          PRN / # OF OBS      
+   C30        2399                                          PRN / # OF OBS      
+   C32        1929        1927                              PRN / # OF OBS      
+   C33        2467        2464                              PRN / # OF OBS      
+   C34        2257        2258                              PRN / # OF OBS      
+   C35        2114                                          PRN / # OF OBS      
+   C36        2469                                          PRN / # OF OBS      
+   C37        1843                                          PRN / # OF OBS      
+   E01  1738        1773  1768  1767  1772                  PRN / # OF OBS      
+   E02  2948        2952  2954  2952  2953                  PRN / # OF OBS      
+   E03  2898        2907  2906  2903  2903                  PRN / # OF OBS      
+   E04  1424        1423  1423  1423  1426                  PRN / # OF OBS      
+   E05  2617        2626  2625  2626  2628                  PRN / # OF OBS      
+   E07  2795        2818  2810  2813  2819                  PRN / # OF OBS      
+   E08  2981        2988  2989  2984  2979                  PRN / # OF OBS      
+   E09  1990        1990  1990  1990  1989                  PRN / # OF OBS      
+   E11  2055        2057  2062  2058  2063                  PRN / # OF OBS      
+   E12  2329        2350  2346  2349  2347                  PRN / # OF OBS      
+   E19  1608        1622  1624  1624  1618                  PRN / # OF OBS      
+   E21  1691        1698  1697  1692  1691                  PRN / # OF OBS      
+   E24  2690        2694  2693  2693  2696                  PRN / # OF OBS      
+   E25  2826        2831  2830  2831  2834                  PRN / # OF OBS      
+   E26  2504        2508  2508  2503  2503                  PRN / # OF OBS      
+   E27  2040        2043  2047  2043  2040                  PRN / # OF OBS      
+   E30  2569        2575  2576  2573  2568                  PRN / # OF OBS      
+   E31  2179        2185  2184  2180  2185                  PRN / # OF OBS      
+   G01  2239  2231  2242                                    PRN / # OF OBS      
+   G02  2343                                                PRN / # OF OBS      
+   G03  2218  2212  2219                                    PRN / # OF OBS      
+   G05  2208  2183                                          PRN / # OF OBS      
+   G06  2307  2274  2312                                    PRN / # OF OBS      
+   G07  2279  2255                                          PRN / # OF OBS      
+   G08  2245  2227  2250                                    PRN / # OF OBS      
+   G09  2233  2222  2232                                    PRN / # OF OBS      
+   G10  2265  2248  2272                                    PRN / # OF OBS      
+   G11  2152                                                PRN / # OF OBS      
+   G12  2227  2208                                          PRN / # OF OBS      
+   G13  2247                                                PRN / # OF OBS      
+   G14  2330                                                PRN / # OF OBS      
+   G15  2221  2170                                          PRN / # OF OBS      
+   G16  2203                                                PRN / # OF OBS      
+   G17  2347  2285                                          PRN / # OF OBS      
+   G18  2173                                                PRN / # OF OBS      
+   G19  2279                                                PRN / # OF OBS      
+   G20  2248                                                PRN / # OF OBS      
+   G21  2248                                                PRN / # OF OBS      
+   G22  2213                                                PRN / # OF OBS      
+   G23  2261                                                PRN / # OF OBS      
+   G24  2210  2199  2215                                    PRN / # OF OBS      
+   G25  2215  2208  2217                                    PRN / # OF OBS      
+   G26  2237  2238  2246                                    PRN / # OF OBS      
+   G27  2265  2254  2267                                    PRN / # OF OBS      
+   G28  2348                                                PRN / # OF OBS      
+   G29  2262  2235                                          PRN / # OF OBS      
+   G30  2215  2197  2219                                    PRN / # OF OBS      
+   G31  2298  2275                                          PRN / # OF OBS      
+   G32  2298  2290  2296                                    PRN / # OF OBS      
+   R01  2134  2120                                          PRN / # OF OBS      
+   R02  2129  2122                                          PRN / # OF OBS      
+   R03  2142  2126                                          PRN / # OF OBS      
+   R04  2146  2135                                          PRN / # OF OBS      
+   R05  2503  2504                                          PRN / # OF OBS      
+   R06  2581                                                PRN / # OF OBS      
+   R07  2567  2561                                          PRN / # OF OBS      
+   R08  2277  2283                                          PRN / # OF OBS      
+   R09  2476  2476                                          PRN / # OF OBS      
+   R10  2198  2167                                          PRN / # OF OBS      
+   R11  2169  2167                                          PRN / # OF OBS      
+   R12  2142                                                PRN / # OF OBS      
+   R13  2047  2032                                          PRN / # OF OBS      
+   R14  2321  2316                                          PRN / # OF OBS      
+   R15  2550  2546                                          PRN / # OF OBS      
+   R16  2549  2535                                          PRN / # OF OBS      
+   R17  2264  2264                                          PRN / # OF OBS      
+   R18  2221  2218                                          PRN / # OF OBS      
+   R19  2146  2141                                          PRN / # OF OBS      
+   R20  2223  2224                                          PRN / # OF OBS      
+   R21  2243  2235                                          PRN / # OF OBS      
+   R22  2474  2470                                          PRN / # OF OBS      
+   R23  2485  2462                                          PRN / # OF OBS      
+   R24  2486  2080                                          PRN / # OF OBS      
+    15.000                                                  INTERVAL            
+  2018    12    28     0     0    0.0000000     GPS         TIME OF FIRST OBS   
+  2018    12    28    23    59   45.0000000     GPS         TIME OF LAST OBS    
+                                                            END OF HEADER      
+ 18 12 28 00 00 00.0000000  0 42C01C04C06C08C11C12C13C19C20C23C25C32
+                                C34C35C37E01E04E05E09E21E31G02G05G06
+                                G07G09G13G16G21G23G26G27G29G30R05R06
+                                R07R14R15R16R22R23
+                        31.000                          36.000          36.000  
+                
+                        37.500                          37.500          38.250  
+                
+                        36.250                          39.250          39.250  
+                
+                        41.000                          43.500          44.250  
+                
+                        38.250                          42.750          40.250  
+                
+                        39.500                          43.500          44.500  
+                
+                        44.000                          44.000          43.750  
+                
+                        50.250                          52.000                  
+                
+                        54.250                          55.000                  
+                
+                        49.500                                                  
+                
+                        26.500                                                  
+                
+                        43.000                          44.250                  
+                
+                        41.000                          40.500                  
+                
+                        31.000                                                  
+                
+                        52.000                                                  
+                
+        48.250                          51.000          52.000          51.750  
+        54.500  
+        45.000                          48.000          48.500          48.500  
+        51.250  
+        43.750                          46.500          46.750          46.500  
+        49.500  
+        51.000                          53.500          55.500          54.750  
+        57.250  
+        38.250                          41.500          41.500          43.000  
+        45.500  
+        45.500                          47.500          48.250          48.250  
+        51.000  
+        42.500                                                                  
+                
+        50.750          44.500                                                  
+                
+        30.500          37.500          35.500                                  
+                
+        53.000          48.000                                                  
+                
+        49.000          47.000          52.250                                  
+                
+        37.000                                                                  
+                
+        42.500                                                                  
+                
+        34.750                                                                  
+                
+        42.500                                                                  
+                
+        38.250          36.000          40.500                                  
+                
+        36.750          34.000          28.250                                  
+                
+        37.750          35.500                                                  
+                
+        48.000          44.750          50.250                                  
+                
+        51.250          47.500                                                  
+                
+        50.000                                                                  
+                
+        47.500          44.500                                                  
+                
+        46.750          44.500                                                  
+                
+        53.750          50.500                                                  
+                
+        46.250          43.250                                                  
+                
+        47.750          43.750                                                  
+                
+        47.500          39.500                                                  
+                
+ 18 12 28 00 00 15.0000000  0 43C01C04C06C08C11C12C13C19C20C23C25C32
+                                C34C35C37E01E04E05E09E21E31G02G05G06
+                                G07G09G13G16G21G23G26G27G29G30R05R06
+                                R07R14R15R16R22R23R24
+                        31.500                          35.750          36.250  
+                
+                        37.250                          37.250          38.250  
+                
+                        36.500                          39.250          39.500  
+                
+                        41.500                          43.750          44.500  
+                
+                        37.750                          42.750          43.250  
+                
+                        39.000                          43.500          44.250  
+                
+                        44.000                          44.000          44.000  
+                
+                        50.500                          52.000                  
+                
+                        54.250                          55.000                  
+                
+                        49.750                                                  
+                
+                        36.750                                                  
+                
+                        43.250                          44.750                  
+                
+                        41.750                          41.250                  
+                
+                        31.000                                                  
+                
+                        52.250                                                  
+                
+        48.250                          51.000          51.750          51.750  
+        54.250  
+        45.250                          48.000          48.250          48.500  
+        51.250  
+        44.000                          46.500          46.500          46.250  
+        49.500  
+        51.250                          53.750          55.250          54.500  
+        57.250  
+        38.250                          41.750          41.500          43.000  
+        45.500  
+        45.750                          47.750          48.250          48.250  
+        51.000  
+        42.250                                                                  
+                
+        50.500          44.750                                                  
+                
+        37.500          32.750          32.250                                  
+                
+        52.750          48.250                                                  
+                
+        48.750          47.250          52.250                                  
+                
+        35.500                                                                  
+                
+        42.250                                                                  
+                
+        35.250                                                                  
+                
+        42.250                                                                  
+                
+        37.750          36.250          40.750                                  
+                
+        32.000          37.250          36.750                                  
+                
+        36.000          36.000                                                  
+                
+        47.750          45.000          50.500                                  
+                
+        51.250          47.500                                                  
+                
+        50.250                                                                  
+                
+        47.500          44.750                                                  
+                
+        46.750          44.250                                                  
+                
+        53.750          50.500                                                  
+                
+        46.250          43.500                                                  
+                
+        47.750          43.750                                                  
+                
+        47.250          39.500                                                  
+                
+        36.750                                                                  
+                
