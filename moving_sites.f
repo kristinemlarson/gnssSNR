@@ -9,7 +9,8 @@
       character*80 tmp, filename
 c     default outputs to zero and false
 c     a priori coordinates and velocity file
-      filename = '/gipsy/source/RinexGNSSv2/knut.txt'
+c     filename = '/gipsy/source/RinexGNSSv2/knut.txt'
+      filename = 'knut.txt'
       print*, year, month, day
       eof = .false.
       fsite = .false.

@@ -1,9 +1,15 @@
       subroutine read_sp3_200sats(inputfile, gps_weeks, 
-     .  gps_seconds, nsat, satnames, XYZ,haveorbit,ipointer,nepochs)
+     .  gps_seconds, nsat, satnames, XYZ,haveorbit,
+     .  ipointer,nepochs,relTime)
       implicit none
 c     kristine larson, september 15,2015
 c     the input is a 15 minute sp3file name
 c     17nov02 tried to extend to 5 minute spfiles
+c     KL 19feb01, allow sp3 files that are longer than 23 hours and 45 minute
+c     times will now be in gps seconds but a second day will no longer go back to 
+c     zero on a day for new week.  this will make it easier to interpolate using a 
+c     common time frame, which will be called relTime
+c     previous behavior assumed all data were from the same day
 c
 c     returns satellite names, 
 c     gps weeks and 
@@ -32,8 +38,9 @@ c     had two midnites in them).
       character*2 chr
       integer satnames(maxsat),nsat, gpsweek, prn, i, j, k, 
      .  time, itime(5), gps_weeks(np), msec, sec, ios,newname,
-     .  hdr_mm, hdr_dd
-      real*8 x,y,z, XYZ(maxsat,np,3), gps_seconds(np), gpssecond
+     .  hdr_yy, hdr_mm, hdr_dd, hdr_hour, hdr_minute, FirstWeek
+      real*8 x,y,z, XYZ(maxsat,np,3), gps_seconds(np), gpssecond,
+     .  FirstSecond, relTime(np), rt
       character*1 duh/'+'/
       character*1 satID(maxsat), constell
       logical haveorbit(maxGNSS) 
@@ -75,10 +82,27 @@ c     now save the month and day of the file
       print*, 'Number of epochs', line(37:39)
 c     removed the commas that are not compliant with new fortran?
       READ (line(37:39), '(I3)') nepochs
+      if (nepochs.gt.np) then 
+        print*,'there are more epochs in this file than the code'
+        print*,'is dimensioned for. Exiting.'
+        call exit
+      endif
+      READ (line(6:7), '(I2)') hdr_yy 
       READ (line(9:10), '(I2)') hdr_mm 
       READ (line(12:13), '(I2)') hdr_dd 
+      READ (line(15:16), '(I2)') hdr_hour 
+      READ (line(18:19), '(I2)') hdr_minute
       print*, 'num epochs in header', nepochs  
-      print*, 'mm and dd in header', hdr_mm, hdr_dd
+      print*, 'header time:', hdr_yy, hdr_mm, hdr_dd,hdr_hour,hdr_minute
+      itime(1) = hdr_yy
+      itime(2) = hdr_mm
+      itime(3) = hdr_dd 
+      itime(4) = hdr_hour
+      itime(5) = hdr_minute
+      sec = 0
+      msec = 0
+      call convert_time(itime,sec, msec, FirstWeek, FirstSecond)
+      print*, 'first week/sec', FirstWeek, FirstSecond
 
       read(12,'(a80)') line
       read(12,'(1x,i5,3x, 17(a1,i2) )')nsat, 
@@ -117,8 +141,8 @@ c       decode your time tag
         read(line(12:13), '(i2)') itime(3)
         read(line(15:16), '(i2)') itime(4)
         read(line(18:19), '(i2)') itime(5)
-        if ( (itime(2).eq.hdr_mm) .and. (itime(3) .eq.hdr_dd)) then
-c         print*,'found a good time tag'
+c       trying to read two day sp3 file, so changes wrt previous file
+        if (.true.) then
           call convert_time(itime,sec, msec, gpsweek, gpssecond)
 c         now need to read nsat lines to get the coordinates of the satellite
           do i=1,nsat
@@ -128,18 +152,19 @@ c         now need to read nsat lines to get the coordinates of the satellite
 c           change prn to new system
             call newSat(constell,prn,newname)
             prn = newname
-c        now using index i instead of PRN number to store data
+c           now using index i instead of PRN number to store data
             XYZ(i,time,1) = x
             XYZ(i,time,2) = y
             XYZ(i,time,3) = z 
-           gps_weeks(time) = gpsweek
-           gps_seconds(time) = gpssecond
-         enddo
-         time = time + 1
-        else
-          print*,'found an extra midnite timetag'
-          print*,'could skip lines, but exiting instead'
-          goto 55
+            gps_weeks(time) = gpsweek
+            gps_seconds(time) = gpssecond
+            call rel_time(gpsweek, gpssecond, 
+     .           FirstWeek, FirstSecond,rt)
+c           save seconds since first epoch
+            relTime(time) = rt
+c           print*, gpsweek,gpssecond, rt
+          enddo
+          time = time + 1
         endif
 c       read the next line - it should be a time tag
         read(12,'(a80)') line
@@ -211,4 +236,18 @@ c       write(6,'(a1, i2, 1x, i3)') satID(i), satnames(i), newname
         haveorbit(newname) = .true.
         ipointer(newname) = i
       enddo
+      end
+
+      subroutine rel_time(gps_week,gps_second,epochWeek,epochSec,rt)
+c     send times (week,secs) and epoch times (epochWeek,epochSec)
+c     return relative time, rt
+      integer gps_week, epochWeek
+      real*8 gps_second, epochSec, rt
+      if (gps_week.eq.epochWeek) then
+        rt = gps_second - epochSec
+      else
+c       add a week of seconds
+        rt = 7*86400 + gps_second - epochSec
+      endif
+c     print*, gps_second, rt
       end

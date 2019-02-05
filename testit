@@ -1,6 +1,8 @@
 #!/bin/csh
-# allow up to 60 satellites and 20 observation types, including Beidou
+# this version allows up to 60 satellites and 20 observation types, including Beidou
 # only two epochs of data are in the file so as to keep file size small
+# other changes: sp3 files can now cross midnite and extend beyond 23 hours and 45 minutes. 
+# This allows the use of rapid sp3 files.
 # all data with elev > 5
 ./gnssSNR.e  at013620.18o.test at013620.18.snr88  gbm20335.sp3  88
 # all data between 5 and 30 degrees elev 

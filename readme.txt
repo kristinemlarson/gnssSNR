@@ -1,3 +1,10 @@
+19feb04
+The code has been changed to allow a sp3 file to be longer than 23 hours and 45 minutes.
+This was a pretty major change because I had to allow for the sp3 file to change GPS week 
+on midnite, which meant changing the timescale used (previous gps seconds and now seconds relative
+to the sp3 epoch).  Other minor changes were made to improve commenting.
+Let me know if you see odd behavior.
+
 19jan10
 Various updates, including extending the number of allowed observable types to 20.
 (it was previously 15).

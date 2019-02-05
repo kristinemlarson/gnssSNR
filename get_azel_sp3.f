@@ -10,10 +10,14 @@
 c    this code requests the azel for a time (tc) and satellite (prn)
 c    t,x9,y9,and z9 are vectors of precise Cartesian GLONASS coordinates (time in 
 c     GPS seconds, xyz in meters
-c    stationXYZ is in meters
+c     stationXYZ is in meters
 c     returns azimuth and elev in radians (likely)
 c     dy is a sigma from the interpolator
-c    t9 is real*8 !!!!!
+c     t9 is real*8 !!!!!
+c
+c     KL 19feb04 - need to make changes for multi-day sp3 files.
+c     t9 is now relative to sp3 epoch time. which means tc should not be used,
+c     but rather tc relative to sp3 epoch time
 
 c     starting value for transmit time
       toffset = 0.07
