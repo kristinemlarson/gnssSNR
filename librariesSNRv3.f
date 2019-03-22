@@ -196,7 +196,7 @@ c
       implicit none
       include 'local.inc'
       integer  i, fileID
-      character*60 rawf
+      character*80 rawf
       character*80 line, outline, dynfmt, dynfmt2
       logical  endofheader 
       integer nobs,iobs(maxsat), iymd(3), ios

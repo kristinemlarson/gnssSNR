@@ -71,7 +71,7 @@ c
       open(12, file=inputfile,status='old',iostat=ios)    
       if (ios .ne. 0) then
         print*, 'the sp3 file does not exist '
-        print*, inputfile(1:50)
+        print*, inputfile(1:80)
         call exit
       endif
 c     #cP2015 12 30  0  0  0.00000000      97 d+D   IGb08 FIT AIUB

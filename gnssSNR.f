@@ -23,7 +23,7 @@ c     allow sp3 files that are longer than 23 hr 45 minutes
       integer stderr
       parameter (stderr=6)
       character*80 inline, line, sp3file
-      character*60 rawfilename, outfilename, broadfile
+      character*80 rawfilename, outfilename, broadfile
       character*4 station
       character*2  key(maxsat), prn_pickc
       character*1 char, satID(maxsat)

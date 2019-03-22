@@ -5,6 +5,7 @@ c     s1,s2,s5, azimuth, elevation angles
 c     edot, in degrees/second
 c     output selection
 c     18ocdt01 added galileo frequencies
+c     added option 66, which is all data < 30 degrees
       implicit none
       include 'local.inc'
       real*8 s1, s2, s5, tod, az, elev, edot
@@ -24,11 +25,11 @@ c         asked for all data > 5
         if (elev.ge.5) then
           write(outID, 112)
      .        prn, elev, az, tod, edot,s6, s1, s2,s5,s7,s8
-c       else
-c         satellites below 5 degrees
-c         write(6, 112)
-c    .        prn, elev, az, tod, edot,s6, s1, s2,s5,s7,s8
         endif
+c     all data below 30
+      elseif (prn_pick.eq.66) then
+          write(outID, 112) prn, elev, az, tod, 
+     .   edot,s6, s1, s2,s5,s7,s8
 c     all data < 10
       elseif (prn_pick.eq.50) then
         if (elev.le.10) then
