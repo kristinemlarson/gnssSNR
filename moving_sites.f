@@ -10,7 +10,9 @@
 c     default outputs to zero and false
 c     a priori coordinates and velocity file
 c     filename = '/gipsy/source/RinexGNSSv2/knut.txt'
-      filename = 'knut.txt'
+c     filename = 'knut.txt'
+      call getlogical ('COORDS', filename)
+
       print*, year, month, day
       eof = .false.
       fsite = .false.
