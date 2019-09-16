@@ -1,3 +1,8 @@
+Using gfortran for the executable 
+
+Unknown date
+Allows 20 observables
+
 19feb04
 The code has been changed to allow a sp3 file to be longer than 23 hours and 45 minutes.
 This was a pretty major change because I had to allow for the sp3 file to change GPS week 

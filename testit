@@ -6,5 +6,5 @@
 # all data with elev > 5
 ./gnssSNR.e  at013620.18o.test at013620.18.snr88  gbm20335.sp3  88
 # all data between 5 and 30 degrees elev 
-./gnssSNR.e  at013620.18o.test at013620.18.snr98  gbm20335.sp3  98
+#./gnssSNR.e  at013620.18o.test at013620.18.snr98  gbm20335.sp3  98
 # if you have other regions you want to use, change write_gnss_to_file.f

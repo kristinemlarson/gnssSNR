@@ -33,8 +33,10 @@ c     17nov03 returns number of time epochs now
 c     18may14 read the header date and ensure that only
 c     data from that date are used (sp3 files from CODE had
 c     had two midnites in them).
+c     19mar25 changed filename of sp3 to be really really long
       include 'local.inc'
-      character*80 inputfile, line, outputfile
+      character*128 inputfile
+      character*80 line, outputfile
       character*2 chr
       integer satnames(maxsat),nsat, gpsweek, prn, i, j, k, 
      .  time, itime(5), gps_weeks(np), msec, sec, ios,newname,
