@@ -27,7 +27,8 @@ c         asked for all data > 5
      .        prn, elev, az, tod, edot,s6, s1, s2,s5,s7,s8
         endif
 c     all data below 30
-      elseif (prn_pick.eq.66) then
+c     KL 2019Sep25 fixed bug found by YNakashima 
+      elseif (prn_pick.eq.66.and.elev.le.30) then
           write(outID, 112) prn, elev, az, tod, 
      .   edot,s6, s1, s2,s5,s7,s8
 c     all data < 10
