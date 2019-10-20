@@ -1,3 +1,37 @@
+19oct18
+To clarify, the column definitions are:
+
+1 Satellite number (see **)
+2 Elevation angle, degrees
+3 Azimuth angle, degrees
+4 Seconds of the day, GPS time
+5 elevation angle rate of change, degrees/sec.
+6  S6
+7  S1
+8  S2
+9  S5
+10 S7
+11 S8
+
+Units of the SNR observables are the same as the native RINEX file
+
+**
+Satellites are named as follows:
+GPS 1-99
+Glonass 101-199
+Galileo 201-299
+Beidou 301-399
+
+SNR Options:
+options 98 and 99 are all data wth elevation angle between 5-30 degrees 
+option 88 is all elevation angle data above 5 degrees
+option 66 is all elevation angle data below 30 degrees
+option 50 is all data below 10 degrees
+
+Allows up to 20 observables in the RINEX file
+
+gfortran is used in the makefile
+-----------------------------------------------------------------------------------------------
 Using gfortran for the executable 
 
 Unknown date
