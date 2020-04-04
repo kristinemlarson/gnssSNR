@@ -1,6 +1,6 @@
       integer maxsat, maxob, maxGNSS, np
       parameter (maxsat = 200)
-      parameter (maxob = 20)
+      parameter (maxob = 25)
       parameter (maxGNSS = 400)
       parameter (np= 288)
       real*8 c, f1, f2

@@ -37,13 +37,14 @@ c     allow sp3 files that are longer than 23 hr 45 minutes
      .   East(3), Up(3), azimuth, elev, staXYZ(3), tod_save,
      .   pi,s1,s2,s5,xrec, yrec, zrec, tc, l1,l2, Lat,Long,Ht,
      .   edot,elev1,elev2, nxrec,nyrec, nzrec, s6, s7, s8,rt,
-     .   rt_lastEpoch, FirstSecond
+     .   rt_lastEpoch, FirstSecond, tod2
       logical eof, bad_point,useit, help, simon
       integer sp3_gps_weeks(np),sp3_nsat,sp3_satnames(maxsat)
       real*8 sp3_XYZ(maxsat,np,3), sp3_gps_seconds(np),
      .  t9(9), x9(9), y9(9), z9(9), sp3_rel_secs(np)
       integer ipointer(maxGNSS)
       logical haveorbit(maxGNSS), fsite, debug
+      debug = .true.
       debug = .false.
 c     set some defaults
 c     if you want edot, set this to true
@@ -83,7 +84,7 @@ c     interpolate (much) beyond your last point
       endif
 c     read the header of the RINEX file, returning station coordinates
 c     and an observable array and nobs, number of observables
-      call read_header(fileIN,rawfilename, xrec,yrec,zrec,
+      call read_header_25obs(fileIN,rawfilename, xrec,yrec,zrec,
      .  iobs,nobs,iymd, station)
       print*,'number of obs main code', nobs
 c     comment out for now.  should read station name
@@ -97,7 +98,7 @@ c     from the receiver
         zrec = nzrec
         print*, xrec, yrec, zrec
       endif
-      if (nobs .gt. 20 .or. nobs .eq. 0) then
+      if (nobs .gt. 25 .or. nobs .eq. 0) then
         print*, 'This code currently only works for <= 20 obs types'
         print*, 'Something is wrong'
         call exit(0)
@@ -127,6 +128,7 @@ c     open output file
 c       seconds in the day
         tod = itime(4)*3600.0 + 60.0*itime(5) + sec
 c       print*, tod, tod_save
+        tod2 = tod + msec/1000.d0
         if (tod.lt.tod_save) then
           print*, 'Time is going backwards.'
           bad_point = .true.
@@ -186,12 +188,9 @@ c               since i did time values 0.5 seconds apart, multiply by 2
               endif
 c             assign the SNR values to variables
               call pickup_snr(obs, iobs, itrack, s1, s2, s5,s6,s7,s8)
-              if (debug) then
-                print*, itrack, iprn, s1, s2, s5
-              endif
 c             write out to a file
               call write_gnss_to_file(fileOUT, iprn, tod,
-     .          s1,s2,s5,azimuth, elev,edot,prn_pick,s6,s7,s8)
+     .          s1,s2,s5,azimuth, elev,edot,prn_pick,s6,s7,s8,tod2)
             else
 c             this can be commented out - kept as debugging, sanity check
 c             write(72,*)'no orbit for satellite', iprn, ' gpssec ',tc

@@ -129,8 +129,31 @@ c     trying to add 15-20 observables
      +           (obs(i,itrack),lli(i,itrack),i=11,15)
               read(fileID, fmt=dynfmt4, iostat=ios)
      +           (obs(i,itrack),lli(i,itrack),i=16,nobs)
-c           5 or fewer observable types
+c     trying to add 21-25 observables - it might work. it might not
+            elseif (nobs.gt.20.and.nobs.le.25) then
+              write(dynfmt, fmt='(A, I3.3, A)')
+     +           "(", 5, "(F14.3, I1,1x))"
+              write(dynfmt2, fmt='(A, I3.3, A)')
+     +           "(", 5, "(F14.3, I1,1x))"
+              write(dynfmt3, fmt='(A, I3.3, A)')
+     +           "(", 5, "(F14.3, I1,1x))"
+              write(dynfmt3, fmt='(A, I3.3, A)')
+     +           "(", 5, "(F14.3, I1,1x))"
+              write(dynfmt4, fmt='(A, I3.3, A)')
+     +           "(" , nobs-20, "(F14.3,I1,1x))"
+
+              read(fileID, fmt=dynfmt, iostat=ios)
+     +           (obs(i,itrack),lli(i,itrack),i=1,5)
+              read(fileID, fmt=dynfmt2, iostat=ios)
+     +           (obs(i,itrack),lli(i,itrack),i=6,10)
+              read(fileID, fmt=dynfmt3, iostat=ios)
+     +           (obs(i,itrack),lli(i,itrack),i=11,15)
+              read(fileID, fmt=dynfmt3, iostat=ios)
+     +           (obs(i,itrack),lli(i,itrack),i=16,20)
+              read(fileID, fmt=dynfmt4, iostat=ios)
+     +           (obs(i,itrack),lli(i,itrack),i=21,nobs)
             else
+c           5 or fewer observable types
               write(dynfmt, fmt='(A, I3.3, A)')
      +           "(", nobs, "(F14.3, I1,1x))"
               read(fileID, fmt=dynfmt, iostat=ios)
