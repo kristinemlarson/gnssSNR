@@ -60,6 +60,7 @@ c     read input files - rinex and output
       call getarg (1,rawfilename)
       call getarg (2,outfilename)
       call getarg (3,sp3file)
+      print*,sp3file
       call getarg (4,prn_pickc)
       write(stderr,*) '>>>>> OUTPUT GOES HERE:', outfilename
 c     comment out for now
