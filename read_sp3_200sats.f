@@ -87,7 +87,9 @@ c     removed the commas that are not compliant with new fortran?
       if (nepochs.gt.np) then 
         print*,'there are more epochs in this file than the code'
         print*,'is dimensioned for. Exiting.'
-        call exit
+        print*,'how bad could it be?  willl test letting it just exit '
+        print*,'after reading the allowed number'
+c       call exit
       endif
       READ (line(6:7), '(I2)') hdr_yy 
       READ (line(9:10), '(I2)') hdr_mm 
