@@ -17,6 +17,10 @@ c     asked for all, but < 30 degrees elevation
 c     i made 98 and 99 do the same thing so i would 
 c     not interfere with my existing file structures at CU
 c
+c     20aug17
+c     this is stupid- but gets the job done
+      call checkForNonsense(s1,s2,s5,s6,s7,s8)
+
 c     2020 mar 02
 c     try to use actual time, not the integer time
 c     print*, msec
@@ -51,4 +55,30 @@ c this format statement gives space for edot and S5
 111   format(i3,  2f10.4, f10.0, f10.6, f7.2, 3f7.2)
 c this format allows galileo
 112   format(i3,  2f10.4, f10.1, f10.6, f7.2, 5f7.2)
+      end
+
+      subroutine checkForNonsense(s1,s2,s5,s6,s7,s8)
+c     this should take care of nonsense values that overrun
+c     the fortran write statements
+c     2020 august 19
+      real*8 s1,s2,s5,s6,s7,s8
+
+      if ((s1.gt.999).or.(s1.lt.0)) then
+        s1=0
+      endif
+      if ((s2.gt.999).or.(s2.lt.0)) then
+        s2=0
+      endif
+      if ((s5.gt.999).or.(s5.lt.0)) then
+        s5=0
+      endif
+      if ((s6.gt.999).or.(s6.lt.0)) then
+        s1=0
+      endif
+      if ((s7.gt.999).or.(s7.lt.0)) then
+        s7=0
+      endif
+      if ((s8.gt.999).or.(s8.lt.0)) then
+        s8=0
+      endif
       end
