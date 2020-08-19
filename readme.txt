@@ -1,3 +1,6 @@
+2020august 19
+Check for nonsense SNR values. If larger than 999, write out as zero.
+
 20apr03
 I have extended the capability of this code to read
 up to 25 observable types in a RINEX 2.11 file.  The code will exit
