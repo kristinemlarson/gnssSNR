@@ -1,3 +1,6 @@
+2020november 27
+Ignore satellites with values of 99999.999  ....
+
 2020august 19
 Check for nonsense SNR values. If larger than 999, write out as zero.
 
