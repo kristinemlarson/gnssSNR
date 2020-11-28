@@ -38,7 +38,7 @@ c     allow sp3 files that are longer than 23 hr 45 minutes
      .   pi,s1,s2,s5,xrec, yrec, zrec, tc, l1,l2, Lat,Long,Ht,
      .   edot,elev1,elev2, nxrec,nyrec, nzrec, s6, s7, s8,rt,
      .   rt_lastEpoch, FirstSecond, tod2
-      logical eof, bad_point,useit, help, simon
+      logical eof, bad_point,useit, help, simon, x999
       integer sp3_gps_weeks(np),sp3_nsat,sp3_satnames(maxsat)
       real*8 sp3_XYZ(maxsat,np,3), sp3_gps_seconds(np),
      .  t9(9), x9(9), y9(9), z9(9), sp3_rel_secs(np)
@@ -62,7 +62,7 @@ c     read input files - rinex and output
       call getarg (3,sp3file)
       print*,sp3file
       call getarg (4,prn_pickc)
-      write(stderr,*) '>>>>> OUTPUT GOES HERE:', outfilename
+      write(stderr,*) '>>>>> OUTPUT Will be Written Here :', outfilename
 c     comment out for now
 c     figure out which option is being requested
       READ (prn_pickc, '(I2)')  prn_pick
@@ -80,14 +80,14 @@ c     interpolate (much) beyond your last point
       print*, 'Last epoch, rel sense', sp3_rel_secs(nepochs)
       rt_lastEpoch = sp3_rel_secs(nepochs)
       if (sp3_nsat .eq. 0) then
-        print*, 'problem reading sp3file'
+        print*, 'problem reading sp3file, so exiting'
         call exit(0)
       endif
 c     read the header of the RINEX file, returning station coordinates
 c     and an observable array and nobs, number of observables
       call read_header_25obs(fileIN,rawfilename, xrec,yrec,zrec,
      .  iobs,nobs,iymd, station)
-      print*,'number of obs main code', nobs
+c     print*,'number of obs main code', nobs
 c     comment out for now.  should read station name
 c     from the receiver
       call moving_sites(station, iymd(1), iymd(2), iymd(3),
@@ -104,12 +104,12 @@ c     from the receiver
         print*, 'Something is wrong'
         call exit(0)
       endif
-      print*, 'S1 location:', iobs(6)
-      print*, 'S2 location:', iobs(7)
-      print*, 'S5 location:', iobs(8)
-      print*, 'S6 location:', iobs(9)
-      print*, 'S7 location:', iobs(10)
-      print*, 'S8 location:', iobs(11)
+c     print*, 'S1 location:', iobs(6)
+c     print*, 'S2 location:', iobs(7)
+c     print*, 'S5 location:', iobs(8)
+c     print*, 'S6 location:', iobs(9)
+c     print*, 'S7 location:', iobs(10)
+c     print*, 'S8 location:', iobs(11)
 
 
       call envTrans(xrec,yrec,zrec,staXYZ,Lat,Long,Ht,North,East,Up)
@@ -131,7 +131,7 @@ c       seconds in the day
 c       print*, tod, tod_save
         tod2 = tod + msec/1000.d0
         if (tod.lt.tod_save) then
-          print*, 'Time is going backwards.'
+c print*, 'Time is going backwards.'
           bad_point = .true.
         else
           bad_point = .false.
@@ -172,29 +172,27 @@ c             print*, gpsweek,tc,rt
               call pick_9points(sp3_nsat, sp3_satnames, sp3_gps_weeks,
      .          sp3_gps_seconds, sp3_XYZ, iprn, gpsweek,tc,itime(4),
      .          t9,x9, y9,z9,ipointer,nepochs,sp3_rel_secs,rt)
-              if (simon) then
-c               if simon variable is true, calculate edot
-c               call get_azel_sp3(tc+0.5, iprn, staXYZ,East,North,Up,
-c    .           Lat,Long,Ht, azimuth,elev2,t9,x9,y9,z9)
-                call get_azel_sp3(rt+0.5, iprn, staXYZ,East,North,Up,
-     .           Lat,Long,Ht, azimuth,elev2,t9,x9,y9,z9)
-              endif
-c             call get_azel_sp3(tc, iprn, staXYZ,East,North,Up,
-c    .           Lat,Long,Ht, azimuth,elev,t9,x9,y9,z9)
-              call get_azel_sp3(rt, iprn, staXYZ,East,North,Up,
-     .           Lat,Long,Ht, azimuth,elev,t9,x9,y9,z9)
-              if (simon) then
-c               since i did time values 0.5 seconds apart, multiply by 2
-                edot =  2.d0*(elev2-elev)
-              endif
-c             assign the SNR values to variables
-              call pickup_snr(obs, iobs, itrack, s1, s2, s5,s6,s7,s8)
-c             write out to a file
-              call write_gnss_to_file(fileOUT, iprn, tod,
+               
+              if ( nint(  (x9(1)/1000))  .eq. 1000000) then
+c               print*,iprn,' bad orbit'
+              else
+                if (simon) then
+                  call get_azel_sp3(rt+0.5, iprn, staXYZ,East,North,Up,
+     .             Lat,Long,Ht, azimuth,elev2,t9,x9,y9,z9)
+                endif
+                call get_azel_sp3(rt, iprn, staXYZ,East,North,Up,
+     .             Lat,Long,Ht, azimuth,elev,t9,x9,y9,z9)
+                if (simon) then
+c                   since i did time values 0.5 seconds apart, multiply by 2
+                    edot =  2.d0*(elev2-elev)
+                endif
+c                 assign the SNR values to variables
+                call pickup_snr(obs, iobs, itrack, s1, s2, s5,s6,s7,s8)
+c                 write out to a file
+cprint*,iprn,' good orbit',s1,s2  
+                call write_gnss_to_file(fileOUT, iprn, tod,
      .          s1,s2,s5,azimuth, elev,edot,prn_pick,s6,s7,s8,tod2)
-            else
-c             this can be commented out - kept as debugging, sanity check
-c             write(72,*)'no orbit for satellite', iprn, ' gpssec ',tc
+              endif
             endif
           enddo
         endif

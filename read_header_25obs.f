@@ -82,16 +82,16 @@ c           read the third line
           endif
         else if (line(61:77).eq.'TIME OF FIRST OBS') then
           read(line, fmt= '(3i6)') iymd(1), iymd(2), iymd(3)
-          print*, 'Time of first Obs: ', iymd
+c         print*, 'Time of first Obs: ', iymd
         else if (line(61:71).eq.'MARKER NAME') then
           read(line(1:4), fmt= '(a4)')  station
-          print*, 'Station name ', station
+c         print*, 'Station name ', station
         endif
         if (line(61:73).eq.'END OF HEADER'.or.
      +       line(61:73).eq.'end of header'.or.
      +       line(61:73).eq.' ') endofheader = .true.
       enddo
-      print*, 'FOUND END OF HEADER'
+c     print*, 'FOUND END OF HEADER'
       do i = 1,maxsat
           iobs(i) = 0
       enddo

@@ -47,7 +47,7 @@ c     19mar25 changed filename of sp3 to be really really long
       character*1 satID(maxsat), constell
       logical haveorbit(maxGNSS) 
       integer ipointer(maxGNSS), nepochs, s1, s2
-      print*, 'Enter sp3 file reading code'
+c     print*, 'Enter sp3 file reading code'
       nsat = 0
       do i=1,maxGNSS
         haveorbit(i) = .false.
@@ -86,9 +86,8 @@ c     removed the commas that are not compliant with new fortran?
       READ (line(37:39), '(I3)') nepochs
       if (nepochs.gt.np) then 
         print*,'there are more epochs in this file than the code'
-        print*,'is dimensioned for. Exiting.'
-        print*,'how bad could it be?  willl test letting it just exit '
-        print*,'after reading the allowed number'
+        print*,'is dimensioned for. Will skip this point '
+c       print*,'after reading the allowed number'
 c       call exit
       endif
       READ (line(6:7), '(I2)') hdr_yy 
@@ -176,7 +175,7 @@ c       increment the time variable
         if (line(1:3).eq.'EOF') goto 55
         if (time >np) then
           print*,'your sp3 file exceeds max number ', np, ' values'
-          print*,'this is bad - exiting the subroutine'
+c         print*,'this is bad - exiting the subroutine'
           goto 55
         endif
       endif
@@ -187,7 +186,7 @@ c     subtract one because of the CODE midnite issue
       print*, 'RETURNING epochs: ', nepochs
 c     you are done reading the file
       close(12)
-      print*, 'exiting the sp3 reading code'
+c     print*, 'exiting the sp3 reading code'
 56    continue
       end
       subroutine newSat(constell, satnum,nsatnum)

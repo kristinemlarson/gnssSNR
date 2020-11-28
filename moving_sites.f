@@ -13,7 +13,7 @@ c     filename = '/gipsy/source/RinexGNSSv2/knut.txt'
 c     filename = 'knut.txt'
       call getlogical ('COORDS', filename)
 
-      print*, year, month, day
+c     print*, year, month, day
       eof = .false.
       fsite = .false.
       xrec = 0.d0
