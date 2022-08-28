@@ -1,3 +1,8 @@
+2022august 26
+
+Allow up to 72 satellites per epoch (it was 60)
+
+
 2020november 27
 Ignore satellites with values of 99999.999  ....
 
@@ -8,12 +13,13 @@ Check for nonsense SNR values. If larger than 999, write out as zero.
 I have extended the capability of this code to read
 up to 25 observable types in a RINEX 2.11 file.  The code will exit
 beyond this point. If you have more than 25 obs types,
-I recommende using a program teqc to reduce the number
+I recommende using a program like teqc to reduce the number
 of observables, e.g.
 
 teqc -O.obs S1+S2+S5 inputRinex > outputRinex
 
-I believe the program gfzrnx can similary reduce the number of observables.
+
+The program gfzrnx can similary reduce the number of observables.
 
 Sincerely,
 Kristine M. Larson
