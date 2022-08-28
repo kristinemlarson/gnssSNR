@@ -13,7 +13,7 @@ c     filename = '/gipsy/source/RinexGNSSv2/knut.txt'
 c     filename = 'knut.txt'
       call getlogical ('COORDS', filename)
 
-c     print*, year, month, day
+      print*, year, month, day
       eof = .false.
       fsite = .false.
       xrec = 0.d0
@@ -49,10 +49,11 @@ c       reference mJD is in tjul0
         if (ios.ne.0) goto 101
 c       time of record
 c       change time from days to years by div 365.25
+c       print*, station, cstation
         if (station .eq. cstation) then
-          write(6,*) 'POS at epoch', xx, yy, zz
-          print*, 'velocities', dx, dy, dz
-          print*,'DELtime', (tjul-tjul0)/365.25
+          write(6,*) 'POS at epoch (meters) ', xx, yy, zz
+          write(6,*) 'velocities (meters/yr) ', dx, dy, dz
+          print*,'DELtime from epoch in years ', (tjul-tjul0)/365.25
           xrec = xx +dx*(tjul-tjul0)/365.25
           yrec = yy +dy*(tjul-tjul0)/365.25
           zrec = zz +dz*(tjul-tjul0)/365.25

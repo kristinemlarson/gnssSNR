@@ -11,8 +11,12 @@ gnssSNR: gnssSNR.e
 %.o: %.f
 	gfortran -c $<
 
+# this is what you need to maek a static executable
+#gnssSNR.e: $(OBJFILES)
+#	gfortran -static-libgfortran $(OBJFILES) -o gnssSNR.e
+
 gnssSNR.e: $(OBJFILES)
-	gfortran $(OBJFILES) -o gnssSNR.e
+	gfortran  $(OBJFILES) -o gnssSNR.e
 
 .PHONY: clean
 clean:

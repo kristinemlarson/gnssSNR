@@ -19,6 +19,8 @@ c     18oct16 increased number of satellites allowed at any epoch to 48
 c     this allows multiple constellations without having to make separate files
 c     19feb04
 c     allow sp3 files that are longer than 23 hr 45 minutes
+c     22aug26
+c     allow up to 72 measurements per epoch
       include 'local.inc'
       integer stderr
       parameter (stderr=6)

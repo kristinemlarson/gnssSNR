@@ -4,7 +4,7 @@
       include 'local.inc'
       character*1 char, satID(maxsat)
       integer fileID, i, itrack, flag, nobs, numsat, sec
-      integer prn(maxsat), ios, nsat
+      integer prn(maxsat), ios, nsat, maxsatepoch
       character*80 inline, dynfmt, dynfmt2, dynfmt3,dynfmt4
       character*80 dynfmt5, anotherline
       real*8  obs(maxob,maxsat) 
@@ -16,7 +16,10 @@ c     KL - put lli and snr into integer arrays, previously misdefined
 c     kl allow up to 15 observables now
 c         and 36 satellites
 c     kl 18oct16, allow up to 48 satellites now
+c     kl 22aug26, allow up to 72 satellites now
       debug = .false.
+c      max number of satellites at a given epoch
+      maxsatepoch = 72
       if (flag.le.1 .or. flag.eq.6) then
         read(inline(33:80),'(12(A1,I2))')
      +         (char, prn(i),i=1,12)
@@ -62,14 +65,36 @@ c       19jan09 changed to allow up to 60 satellites
 
           read(fileID,'(A80)', iostat=ios) inline
           read(inline(33:80),'(12(A1,I2))') (char, prn(i),i=49,numsat) 
-          read(inline(33:80),'(12(A1,2x))') (satID(i),i=49,numsat)
+          read(inline(33:80),'(12(A1,2x))') (satID(i),i=49,60)
+        elseif (numsat > 60 .and. numsat <= 72) then
+          read(fileID,'(A80)', iostat=ios) inline
+          read(inline(33:80),'(12(A1,I2))') (char, prn(i),i=13,24)
+          read(inline(33:80),'(12(A1,2x))') (satID(i),i=13,24)
+
+          read(fileID,'(A80)', iostat=ios) inline
+          read(inline(33:80),'(12(A1,I2))') (char, prn(i),i=25,36) 
+          read(inline(33:80),'(12(A1,2x))') (satID(i),i=25,36)
+
+          read(fileID,'(A80)', iostat=ios) inline
+          read(inline(33:80),'(12(A1,I2))') (char, prn(i),i=37,48) 
+          read(inline(33:80),'(12(A1,2x))') (satID(i),i=37,48)
+
+          read(fileID,'(A80)', iostat=ios) inline
+          read(inline(33:80),'(12(A1,I2))') (char, prn(i),i=49,60) 
+          read(inline(33:80),'(12(A1,2x))') (satID(i),i=49,60)
+
+          read(fileID,'(A80)', iostat=ios) inline
+          read(inline(33:80),'(12(A1,I2))') (char, prn(i),i=61,numsat) 
+          read(inline(33:80),'(12(A1,2x))') (satID(i),i=61,numsat)
+
         endif
         if (debug) then
 c         print*, 'made it past here'
         endif
-        if (numsat > 60) then
-          print*, 'I cannot read more than 60 satellites'
-          print*, 'Please stop launching them!'
+        if (numsat > maxsatepoch) then
+          print*, 'This code cannot read more than ', maxsatepoch  
+          print*, 'satellites at a given epoch. Try removing '
+          print*, 'unneeded constellations'
           call exit
         endif
 c       I need to rename the satellites now

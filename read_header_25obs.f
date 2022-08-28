@@ -30,7 +30,7 @@ c     KL 18mar05, fixed bug on nobs
 c         exit if more than 20 observables
           if (nobs.gt.25) then
              print*,'this code only supports <=25 observ types'
-             print*,'If your file has more, reduce using teqc '
+             print*,'If your file has more, reduce using gfzrnx or'
              print*,'teqc -O.obs S1+S2+S5+S6+S8 should do the trick' 
              call exit
           endif

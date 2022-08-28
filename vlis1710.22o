@@ -1,0 +1,1493 @@
+     2.11           OBSERVATION DATA    M (MIXED)           RINEX VERSION / TYPE
+INITIAL_RINEX_VERSION: 3.05                                 COMMENT             
+GR50 V4.52          KADASTER            20220619 235942 UTC PGM / RUN BY / DATE 
+gfzrnx-1.16-8177    FILE CONVERSION     20220827 091322 UTC COMMENT             
+VLIS                                                        MARKER NAME         
+13538M001                                                   MARKER NUMBER       
+AGRS                KADASTER                                OBSERVER / AGENCY   
+1830411             LEICA GR50          4.52/7.711          REC # / TYPE / VERS 
+726201              LEIAR25.R4      LEIT                    ANT # / TYPE        
+        0.0000        0.0000        0.0000                  ANTENNA: DELTA H/E/N
+  3975805.2237   249950.0825  4964446.0875                  APPROX POSITION XYZ 
+                                                            COMMENT             
+*********************************************************** COMMENT             
+*                 WARNING - FORMAT CONVERSION             * COMMENT             
+* ------------------------------------------------------- * COMMENT             
+*  The data values: observation, loss of lock (LLI) and   * COMMENT             
+*  signal strength (SSI) indicators are left as they are. * COMMENT             
+*    The LLI meaning differs between versions 2 and 3     * COMMENT             
+*    and the Interpretation of bit 1 and 2 has to be      * COMMENT             
+*                   used with caution !!!                 * COMMENT             
+*********************************************************** COMMENT             
+                                                            COMMENT             
+RINEX 3 -> 2 TYPE CONVERSION DETAILS:                       COMMENT             
+-------------------------------------                       COMMENT             
+   C C2I -> C2                                              COMMENT             
+   C C5P -> C5                                              COMMENT             
+   C C6I -> C6                                              COMMENT             
+   C C7I -> C7                                              COMMENT             
+   C D2I -> D2                                              COMMENT             
+   C D5P -> D5                                              COMMENT             
+   C D6I -> D6                                              COMMENT             
+   C D7I -> D7                                              COMMENT             
+   C L2I -> L2                                              COMMENT             
+   C L5P -> L5                                              COMMENT             
+   C L6I -> L6                                              COMMENT             
+   C L7I -> L7                                              COMMENT             
+   C S2I -> S2                                              COMMENT             
+   C S5P -> S5                                              COMMENT             
+   C S6I -> S6                                              COMMENT             
+   C S7I -> S7                                              COMMENT             
+-------------------------------------                       COMMENT             
+   E C1C -> C1                                              COMMENT             
+   E C5Q -> C5                                              COMMENT             
+   E C6C -> C6                                              COMMENT             
+   E C7Q -> C7                                              COMMENT             
+   E C8Q -> C8                                              COMMENT             
+   E D1C -> D1                                              COMMENT             
+   E D5Q -> D5                                              COMMENT             
+   E D6C -> D6                                              COMMENT             
+   E D7Q -> D7                                              COMMENT             
+   E D8Q -> D8                                              COMMENT             
+   E L1C -> L1                                              COMMENT             
+   E L5Q -> L5                                              COMMENT             
+   E L6C -> L6                                              COMMENT             
+   E L7Q -> L7                                              COMMENT             
+   E L8Q -> L8                                              COMMENT             
+   E S1C -> S1                                              COMMENT             
+   E S5Q -> S5                                              COMMENT             
+   E S6C -> S6                                              COMMENT             
+   E S7Q -> S7                                              COMMENT             
+   E S8Q -> S8                                              COMMENT             
+-------------------------------------                       COMMENT             
+   G C1C -> C1                                              COMMENT             
+   G C2S -> C2                                              COMMENT             
+   G C2W -> P2                                              COMMENT             
+   G C5Q -> C5                                              COMMENT             
+   G D1C -> D1                                              COMMENT             
+   G D2W -> D2                                              COMMENT             
+   G D5Q -> D5                                              COMMENT             
+   G L1C -> L1                                              COMMENT             
+   G L2W -> L2                                              COMMENT             
+   G L5Q -> L5                                              COMMENT             
+   G S1C -> S1                                              COMMENT             
+   G S2W -> S2                                              COMMENT             
+   G S5Q -> S5                                              COMMENT             
+-------------------------------------                       COMMENT             
+   R C1C -> C1                                              COMMENT             
+   R C2C -> C2                                              COMMENT             
+   R C2P -> P2                                              COMMENT             
+   R C3Q -> C3                                              COMMENT             
+   R D1C -> D1                                              COMMENT             
+   R D2P -> D2                                              COMMENT             
+   R D3Q -> D3                                              COMMENT             
+   R L1C -> L1                                              COMMENT             
+   R L2P -> L2                                              COMMENT             
+   R L3Q -> L3                                              COMMENT             
+   R S1C -> S1                                              COMMENT             
+   R S2P -> S2                                              COMMENT             
+   R S3Q -> S3                                              COMMENT             
+-------------------------------------                       COMMENT             
+                                                            COMMENT             
+    29    C1    C2    C3    C5    C6    C7    C8    D1    D2# / TYPES OF OBSERV 
+          D3    D5    D6    D7    D8    L1    L2    L3    L5# / TYPES OF OBSERV 
+          L6    L7    L8    P2    S1    S2    S3    S5    S6# / TYPES OF OBSERV 
+          S7    S8                                          # / TYPES OF OBSERV 
+INITIAL_RINEX_VERSION: 3.04                                 COMMENT             
+SNR is mapped to RINEX snr flag value [1-9]                 COMMENT             
+LX:     < 12dBHz -> 1; 12-17dBHz -> 2; 18-23dBHz -> 3       COMMENT             
+       24-29dBHz -> 4; 30-35dBHz -> 5; 36-41dBHz -> 6       COMMENT             
+       42-47dBHz -> 7; 48-53dBHz -> 8; >= 54dBHz -> 9       COMMENT             
+     0                                                      RCV CLOCK OFFS APPL 
+    18    18  1929     7                                    LEAP SECONDS        
+GFZRNX.NUM_EPOCHS: 5760                                     COMMENT
+   122                                                      # OF SATELLITES     
+   C05        5759              5577  5758              5759PRN / # OF OBS      
+                    5577  5758              5759            PRN / # OF OBS      
+        5572  5757                    5759              5577PRN / # OF OBS      
+        5758                                                PRN / # OF OBS      
+   C06        2018              2018  2018              2018PRN / # OF OBS      
+                    2018  2018              2018            PRN / # OF OBS      
+        2017  2017                    2018              2018PRN / # OF OBS      
+        2018                                                PRN / # OF OBS      
+   C07        1950              1951  1951              1950PRN / # OF OBS      
+                    1951  1951              1947            PRN / # OF OBS      
+        1948  1949                    1950              1951PRN / # OF OBS      
+        1951                                                PRN / # OF OBS      
+   C08        2022              2022  2023              2022PRN / # OF OBS      
+                    2022  2023              2018            PRN / # OF OBS      
+        2020  2022                    2022              2022PRN / # OF OBS      
+        2023                                                PRN / # OF OBS      
+   C09        2297              2296  2297              2297PRN / # OF OBS      
+                    2296  2297              2290            PRN / # OF OBS      
+        2290  2295                    2297              2296PRN / # OF OBS      
+        2297                                                PRN / # OF OBS      
+   C10        2330              2321  2338              2330PRN / # OF OBS      
+                    2321  2338              2319            PRN / # OF OBS      
+        2307  2325                    2330              2321PRN / # OF OBS      
+        2338                                                PRN / # OF OBS      
+   C11        2026              2027  2030              2026PRN / # OF OBS      
+                    2027  2030              2023            PRN / # OF OBS      
+        2022  2024                    2026              2027PRN / # OF OBS      
+        2030                                                PRN / # OF OBS      
+   C12        2216              2216  2217              2216PRN / # OF OBS      
+                    2216  2217              2212            PRN / # OF OBS      
+        2211  2213                    2216              2216PRN / # OF OBS      
+        2217                                                PRN / # OF OBS      
+   C13        2280              2281  2280              2280PRN / # OF OBS      
+                    2281  2280              2280            PRN / # OF OBS      
+        2278  2277                    2280              2281PRN / # OF OBS      
+        2280                                                PRN / # OF OBS      
+   C14        2500              2507  2509              2500PRN / # OF OBS      
+                    2507  2509              2494            PRN / # OF OBS      
+        2500  2504                    2500              2507PRN / # OF OBS      
+        2509                                                PRN / # OF OBS      
+   C16        1864              1863  1864              1864PRN / # OF OBS      
+                    1863  1864              1864            PRN / # OF OBS      
+        1859  1863                    1864              1863PRN / # OF OBS      
+        1864                                                PRN / # OF OBS      
+   C19        1891        1891  1889                    1891PRN / # OF OBS      
+              1891  1889                    1888        1891PRN / # OF OBS      
+        1887                          1891        1891  1889PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   C20        1744        1742  1744                    1744PRN / # OF OBS      
+              1742  1744                    1742        1742PRN / # OF OBS      
+        1740                          1744        1742  1744PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   C21        2498        2495  2497                    2498PRN / # OF OBS      
+              2495  2497                    2491        2495PRN / # OF OBS      
+        2491                          2498        2495  2497PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   C22        1996        1994  1996                    1996PRN / # OF OBS      
+              1994  1996                    1990        1994PRN / # OF OBS      
+        1992                          1996        1994  1996PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   C23        2405        2407  2408                    2405PRN / # OF OBS      
+              2407  2408                    2403        2407PRN / # OF OBS      
+        2403                          2405        2407  2408PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   C24        2563        2563  2562                    2563PRN / # OF OBS      
+              2563  2562                    2559        2563PRN / # OF OBS      
+        2558                          2563        2563  2562PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   C25        2643        2639  2640                    2643PRN / # OF OBS      
+              2639  2640                    2642        2639PRN / # OF OBS      
+        2633                          2643        2639  2640PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   C26        2458        2457  2456                    2458PRN / # OF OBS      
+              2457  2456                    2455        2457PRN / # OF OBS      
+        2454                          2458        2457  2456PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   C27        2286        2282  2285                    2286PRN / # OF OBS      
+              2282  2285                    2286        2282PRN / # OF OBS      
+        2283                          2286        2282  2285PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   C28        2169        2167  2164                    2169PRN / # OF OBS      
+              2167  2164                    2166        2167PRN / # OF OBS      
+        2158                          2169        2167  2164PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   C29        2289        2289  2287                    2289PRN / # OF OBS      
+              2289  2287                    2285        2289PRN / # OF OBS      
+        2278                          2289        2289  2287PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   C30        2336        2330  2332                    2336PRN / # OF OBS      
+              2330  2332                    2330        2330PRN / # OF OBS      
+        2325                          2336        2330  2332PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   C32        2109        2109  2109                    2109PRN / # OF OBS      
+              2109  2109                    2093        2109PRN / # OF OBS      
+        2104                          2109        2109  2109PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   C33        2485        2231  2482                    2485PRN / # OF OBS      
+              2231  2482                    2485        2231PRN / # OF OBS      
+        2481                          2485        2231  2482PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   C34        2089        2083  2089                    2089PRN / # OF OBS      
+              2083  2089                    2088        2083PRN / # OF OBS      
+        2084                          2089        2083  2089PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   C35        2251        2249  2251                    2251PRN / # OF OBS      
+              2249  2251                    2250        2249PRN / # OF OBS      
+        2249                          2251        2249  2251PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   C36        1600        1596  1597                    1600PRN / # OF OBS      
+              1596  1597                    1593        1596PRN / # OF OBS      
+        1594                          1600        1596  1597PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   C37        1880        1880  1880                    1880PRN / # OF OBS      
+              1880  1880                    1876        1880PRN / # OF OBS      
+        1878                          1880        1880  1880PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   C38        1732        1731  1732                    1732PRN / # OF OBS      
+              1731  1732                    1731        1731PRN / # OF OBS      
+        1730                          1732        1731  1732PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   C39        1729        1728  1729                    1729PRN / # OF OBS      
+              1728  1729                    1729        1728PRN / # OF OBS      
+        1728                          1729        1728  1729PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   C40        1753        1752  1753                    1753PRN / # OF OBS      
+              1752  1753                    1751        1752PRN / # OF OBS      
+        1750                          1753        1752  1753PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   C41        2343        2329  2334                    2343PRN / # OF OBS      
+              2329  2334                    2327        2329PRN / # OF OBS      
+        2322                          2343        2329  2334PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   C42        2595        2591  2599                    2595PRN / # OF OBS      
+              2591  2599                    2589        2591PRN / # OF OBS      
+        2593                          2595        2591  2599PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   C43        1998        1984  1990                    1998PRN / # OF OBS      
+              1984  1990                    1990        1984PRN / # OF OBS      
+        1978                          1998        1984  1990PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   C44        2183        2176  2182                    2183PRN / # OF OBS      
+              2176  2182                    2173        2176PRN / # OF OBS      
+        2167                          2183        2176  2182PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   C45        2186        2181  2179                    2186PRN / # OF OBS      
+              2181  2179                    2181        2181PRN / # OF OBS      
+        2171                          2186        2181  2179PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   C46        1741        1739  1741                    1741PRN / # OF OBS      
+              1739  1741                    1737        1739PRN / # OF OBS      
+        1738                          1741        1739  1741PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   C56        2312              2308                    2312PRN / # OF OBS      
+                    2308                    2309            PRN / # OF OBS      
+        2302                          2312              2308PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   C57        2220                                      2220PRN / # OF OBS      
+                                            2219            PRN / # OF OBS      
+                                      2220                  PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   C58        2029                                      2029PRN / # OF OBS      
+                                            2029            PRN / # OF OBS      
+                                      2029                  PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   C60        2508               995                    2508PRN / # OF OBS      
+                     995                    2453            PRN / # OF OBS      
+         973                          2508               995PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   E01  1291              1295  1293  1295  1297  1291      PRN / # OF OBS      
+              1295  1293  1295  1297  1291              1295PRN / # OF OBS      
+        1293  1295  1297        1291              1295  1293PRN / # OF OBS      
+        1295  1297                                          PRN / # OF OBS      
+   E02  2818              2817  2817  2817  2817  2818      PRN / # OF OBS      
+              2817  2817  2817  2817  2818              2817PRN / # OF OBS      
+        2817  2817  2817        2818              2817  2817PRN / # OF OBS      
+        2817  2817                                          PRN / # OF OBS      
+   E03  2855              2855  2855  2855  2855  2855      PRN / # OF OBS      
+              2855  2855  2855  2855  2855              2855PRN / # OF OBS      
+        2855  2855  2855        2855              2855  2855PRN / # OF OBS      
+        2855  2855                                          PRN / # OF OBS      
+   E04   958               958   958   958   958   958      PRN / # OF OBS      
+               958   958   958   958   958               958PRN / # OF OBS      
+         958   958   958         958               958   958PRN / # OF OBS      
+         958   958                                          PRN / # OF OBS      
+   E05  2184              2186  2187  2188  2187  2184      PRN / # OF OBS      
+              2186  2187  2188  2187  2184              2186PRN / # OF OBS      
+        2187  2188  2187        2184              2186  2187PRN / # OF OBS      
+        2188  2187                                          PRN / # OF OBS      
+   E07  2726              2731  2732  2731  2731  2726      PRN / # OF OBS      
+              2731  2732  2731  2731  2726              2731PRN / # OF OBS      
+        2732  2731  2731        2726              2731  2732PRN / # OF OBS      
+        2731  2731                                          PRN / # OF OBS      
+   E08  2928              2928  2927  2927  2914  2928      PRN / # OF OBS      
+              2928  2927  2927  2914  2928              2928PRN / # OF OBS      
+        2927  2927  2914        2928              2928  2927PRN / # OF OBS      
+        2927  2914                                          PRN / # OF OBS      
+   E09  1532              1532  1532  1532  1532  1532      PRN / # OF OBS      
+              1532  1532  1532  1532  1532              1532PRN / # OF OBS      
+        1532  1532  1532        1532              1532  1532PRN / # OF OBS      
+        1532  1532                                          PRN / # OF OBS      
+   E10  2074              2074  2074  2074  2074  2074      PRN / # OF OBS      
+              2074  2074  2074  2074  2074              2074PRN / # OF OBS      
+        2074  2074  2074        2074              2074  2074PRN / # OF OBS      
+        2074  2074                                          PRN / # OF OBS      
+   E11  1968              1967  1967  1967  1967  1968      PRN / # OF OBS      
+              1967  1967  1967  1967  1968              1967PRN / # OF OBS      
+        1967  1967  1967        1968              1967  1967PRN / # OF OBS      
+        1967  1967                                          PRN / # OF OBS      
+   E12  2041              2041  2041  2041  2041  2041      PRN / # OF OBS      
+              2041  2041  2041  2041  2041              2041PRN / # OF OBS      
+        2041  2041  2041        2041              2041  2041PRN / # OF OBS      
+        2041  2041                                          PRN / # OF OBS      
+   E13  2406              2406  2406  2410  2414  2406      PRN / # OF OBS      
+              2406  2406  2410  2414  2406              2406PRN / # OF OBS      
+        2406  2410  2414        2406              2406  2406PRN / # OF OBS      
+        2410  2414                                          PRN / # OF OBS      
+   E14    89                89    89    89    89    89      PRN / # OF OBS      
+                89    89    89    89    89                89PRN / # OF OBS      
+          89    89    89          89                89    89PRN / # OF OBS      
+          89    89                                          PRN / # OF OBS      
+   E15  2331              2344  2339  2348  2360  2331      PRN / # OF OBS      
+              2344  2339  2348  2360  2331              2344PRN / # OF OBS      
+        2339  2348  2360        2331              2344  2339PRN / # OF OBS      
+        2348  2360                                          PRN / # OF OBS      
+   E18    10                10    10    10    10    10      PRN / # OF OBS      
+                10    10    10    10    10                10PRN / # OF OBS      
+          10    10    10          10                10    10PRN / # OF OBS      
+          10    10                                          PRN / # OF OBS      
+   E19  1455              1453  1453  1454  1469  1455      PRN / # OF OBS      
+              1453  1453  1454  1469  1455              1453PRN / # OF OBS      
+        1453  1454  1469        1455              1453  1453PRN / # OF OBS      
+        1454  1469                                          PRN / # OF OBS      
+   E21  1758              1760  1759  1760  1760  1758      PRN / # OF OBS      
+              1760  1759  1760  1760  1758              1760PRN / # OF OBS      
+        1759  1760  1760        1758              1760  1759PRN / # OF OBS      
+        1760  1760                                          PRN / # OF OBS      
+   E24  1834              1838  1837  1859  1871  1834      PRN / # OF OBS      
+              1838  1837  1859  1871  1834              1838PRN / # OF OBS      
+        1837  1859  1871        1834              1838  1837PRN / # OF OBS      
+        1859  1871                                          PRN / # OF OBS      
+   E25  2665              2661  2661  2660  2663  2665      PRN / # OF OBS      
+              2661  2661  2660  2663  2665              2661PRN / # OF OBS      
+        2661  2660  2663        2665              2661  2661PRN / # OF OBS      
+        2660  2663                                          PRN / # OF OBS      
+   E26  2092              2096  2095  2096  2096  2092      PRN / # OF OBS      
+              2096  2095  2096  2096  2092              2096PRN / # OF OBS      
+        2095  2096  2096        2092              2096  2095PRN / # OF OBS      
+        2096  2096                                          PRN / # OF OBS      
+   E27  2416              2415  2415  2415  2415  2416      PRN / # OF OBS      
+              2415  2415  2415  2415  2416              2415PRN / # OF OBS      
+        2415  2415  2415        2416              2415  2415PRN / # OF OBS      
+        2415  2415                                          PRN / # OF OBS      
+   E30  2881              2882  2882  2882  2882  2881      PRN / # OF OBS      
+              2882  2882  2882  2882  2881              2882PRN / # OF OBS      
+        2882  2882  2882        2881              2882  2882PRN / # OF OBS      
+        2882  2882                                          PRN / # OF OBS      
+   E31  1318              1320  1320  1325  1328  1318      PRN / # OF OBS      
+              1320  1320  1325  1328  1318              1320PRN / # OF OBS      
+        1320  1325  1328        1318              1320  1320PRN / # OF OBS      
+        1325  1328                                          PRN / # OF OBS      
+   E33  2097              2097  2097  2097  2097  2097      PRN / # OF OBS      
+              2097  2097  2097  2097  2097              2097PRN / # OF OBS      
+        2097  2097  2097        2097              2097  2097PRN / # OF OBS      
+        2097  2097                                          PRN / # OF OBS      
+   E34  1919              1932  1924  1932  1942  1919      PRN / # OF OBS      
+              1932  1924  1932  1942  1919              1932PRN / # OF OBS      
+        1924  1932  1942        1919              1932  1924PRN / # OF OBS      
+        1932  1942                                          PRN / # OF OBS      
+   E36  1699              1698  1698  1698  1698  1699      PRN / # OF OBS      
+              1698  1698  1698  1698  1699              1698PRN / # OF OBS      
+        1698  1698  1698        1699              1698  1698PRN / # OF OBS      
+        1698  1698                                          PRN / # OF OBS      
+   G01  2046  2044        2053                    2046  2043PRN / # OF OBS      
+              2053                    2042  2040        2053PRN / # OF OBS      
+                          2043  2046  2043        2053      PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   G02  2364                                      2364  2352PRN / # OF OBS      
+                                      2360  2351            PRN / # OF OBS      
+                          2352  2364  2352                  PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   G03  2030  2026        2036                    2030  2012PRN / # OF OBS      
+              2036                    2021  2008        2036PRN / # OF OBS      
+                          2012  2030  2012        2036      PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   G04  2164  2158        2167                    2164  2151PRN / # OF OBS      
+              2167                    2158  2150        2167PRN / # OF OBS      
+                          2151  2164  2151        2167      PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   G05  2255  2249                                2255  2254PRN / # OF OBS      
+                                      2252  2252            PRN / # OF OBS      
+                          2254  2255  2254                  PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   G06  2270  2268        2271                    2270  2269PRN / # OF OBS      
+              2271                    2266  2265        2271PRN / # OF OBS      
+                          2269  2270  2269        2271      PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   G07  2260  2254                                2260  2252PRN / # OF OBS      
+                                      2255  2250            PRN / # OF OBS      
+                          2252  2260  2252                  PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   G08  2150  2146        2153                    2150  2141PRN / # OF OBS      
+              2153                    2148  2141        2153PRN / # OF OBS      
+                          2141  2150  2141        2153      PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   G09  2081  2080        2082                    2081  2078PRN / # OF OBS      
+              2082                    2081  2078        2082PRN / # OF OBS      
+                          2078  2081  2078        2082      PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   G10  2290  2288        2289                    2290  2287PRN / # OF OBS      
+              2289                    2286  2285        2289PRN / # OF OBS      
+                          2287  2290  2287        2289      PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   G11  2298  2296        2301                    2298  2293PRN / # OF OBS      
+              2301                    2294  2292        2301PRN / # OF OBS      
+                          2293  2298  2293        2301      PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   G12  2034  2027                                2034  2030PRN / # OF OBS      
+                                      2030  2027            PRN / # OF OBS      
+                          2030  2034  2030                  PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   G13  2055                                      2055  2044PRN / # OF OBS      
+                                      2054  2044            PRN / # OF OBS      
+                          2044  2055  2044                  PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   G14  2303  2302        2303                    2303  2298PRN / # OF OBS      
+              2303                    2302  2298        2303PRN / # OF OBS      
+                          2298  2303  2298        2303      PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   G15  2119  2117                                2119  2118PRN / # OF OBS      
+                                      2117  2117            PRN / # OF OBS      
+                          2118  2119  2118                  PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   G16  2169                                      2169  2164PRN / # OF OBS      
+                                      2168  2164            PRN / # OF OBS      
+                          2164  2169  2164                  PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   G17  2358  2352                                2358  2358PRN / # OF OBS      
+                                      2357  2357            PRN / # OF OBS      
+                          2358  2358  2358                  PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   G18  2232  2230        2234                    2232  2226PRN / # OF OBS      
+              2234                    2230  2226        2234PRN / # OF OBS      
+                          2226  2232  2226        2234      PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   G19  2285                                      2285  2281PRN / # OF OBS      
+                                      2284  2280            PRN / # OF OBS      
+                          2281  2285  2281                  PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   G20  2215                                      2215  2209PRN / # OF OBS      
+                                      2212  2207            PRN / # OF OBS      
+                          2209  2215  2209                  PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   G21  2034                                      2034  2017PRN / # OF OBS      
+                                      2031  2016            PRN / # OF OBS      
+                          2017  2034  2017                  PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   G22  2342                                      2342  2329PRN / # OF OBS      
+                                      2338  2325            PRN / # OF OBS      
+                          2329  2342  2329                  PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   G23  2310  2309        2311                    2310  2307PRN / # OF OBS      
+              2311                    2307  2306        2311PRN / # OF OBS      
+                          2307  2310  2307        2311      PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   G24  1899  1893        1906                    1899  1881PRN / # OF OBS      
+              1906                    1889  1876        1906PRN / # OF OBS      
+                          1881  1899  1881        1906      PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   G25  1923  1917        1931                    1923  1911PRN / # OF OBS      
+              1931                    1920  1910        1931PRN / # OF OBS      
+                          1911  1923  1911        1931      PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   G26  2122  2120        2122                    2122  2113PRN / # OF OBS      
+              2122                    2120  2111        2122PRN / # OF OBS      
+                          2113  2122  2113        2122      PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   G27  2057  2051        2058                    2057  2033PRN / # OF OBS      
+              2058                    2051  2031        2058PRN / # OF OBS      
+                          2033  2057  2033        2058      PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   G28  2309                                      2309  2291PRN / # OF OBS      
+                                      2303  2289            PRN / # OF OBS      
+                          2291  2309  2291                  PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   G29  2142  2135                                2142  2139PRN / # OF OBS      
+                                      2138  2136            PRN / # OF OBS      
+                          2139  2142  2139                  PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   G30  2152  2149        2153                    2152  2149PRN / # OF OBS      
+              2153                    2148  2147        2153PRN / # OF OBS      
+                          2149  2152  2149        2153      PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   G31  2260  2251                                2260  2258PRN / # OF OBS      
+                                      2258  2257            PRN / # OF OBS      
+                          2258  2260  2258                  PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   G32  2319  2315        2317                    2319  2314PRN / # OF OBS      
+              2317                    2315  2311        2317PRN / # OF OBS      
+                          2314  2319  2314        2317      PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   R01  2535  2529                                2535  2530PRN / # OF OBS      
+                                      2535  2525            PRN / # OF OBS      
+                          2530  2535  2530                  PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   R02  2543  2543                                2543  2543PRN / # OF OBS      
+                                      2543  2542            PRN / # OF OBS      
+                          2543  2543  2543                  PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   R03  2219  2214                                2219  2216PRN / # OF OBS      
+                                      2219  2213            PRN / # OF OBS      
+                          2216  2219  2216                  PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   R04  2079  2078                                2079  2078PRN / # OF OBS      
+                                      2079  2077            PRN / # OF OBS      
+                          2078  2079  2078                  PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   R05  2053  2051  2049                          2053  2052PRN / # OF OBS      
+        2049                          2053  2048  2049      PRN / # OF OBS      
+                          2052  2053  2052  2049            PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   R06  1951                                      1951      PRN / # OF OBS      
+                                      1943                  PRN / # OF OBS      
+                                1951                        PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   R07  2126  2120                                2126  2121PRN / # OF OBS      
+                                      2126  2119            PRN / # OF OBS      
+                          2121  2126  2121                  PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   R08  2554  2553                                2554  2550PRN / # OF OBS      
+                                      2553  2545            PRN / # OF OBS      
+                          2550  2554  2550                  PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   R09  2202  2199                                2202  2200PRN / # OF OBS      
+                                      2201  2196            PRN / # OF OBS      
+                          2200  2202  2200                  PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   R10  2522                                      2522      PRN / # OF OBS      
+                                      2522                  PRN / # OF OBS      
+                                2522                        PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   R11  2537  2537  2534                          2537  2535PRN / # OF OBS      
+        2534                          2536  2532  2534      PRN / # OF OBS      
+                          2535  2537  2535  2534            PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   R12  2545  2541                                2545  2542PRN / # OF OBS      
+                                      2545  2542            PRN / # OF OBS      
+                          2542  2545  2542                  PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   R13  1920  1908                                1920  1917PRN / # OF OBS      
+                                      1918  1910            PRN / # OF OBS      
+                          1917  1920  1917                  PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   R14  2043  2042                                2043  2042PRN / # OF OBS      
+                                      2042  2040            PRN / # OF OBS      
+                          2042  2043  2042                  PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   R15  2059  2056                                2059  2056PRN / # OF OBS      
+                                      2059  2055            PRN / # OF OBS      
+                          2056  2059  2056                  PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   R17  2232  2225                                2232  2228PRN / # OF OBS      
+                                      2231  2226            PRN / # OF OBS      
+                          2228  2232  2228                  PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   R18  2408  2402                                2408  2401PRN / # OF OBS      
+                                      2406  2400            PRN / # OF OBS      
+                          2401  2408  2401                  PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   R19  2329  2323                                2329  2322PRN / # OF OBS      
+                                      2327  2316            PRN / # OF OBS      
+                          2322  2329  2322                  PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   R20  2130  2130                                2130  2130PRN / # OF OBS      
+                                      2127  2126            PRN / # OF OBS      
+                          2130  2130  2130                  PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   R21  2217  2215  2211                          2217  2214PRN / # OF OBS      
+        2211                          2216  2211  2211      PRN / # OF OBS      
+                          2214  2217  2214  2211            PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   R23  2221                                      2221      PRN / # OF OBS      
+                                      2220                  PRN / # OF OBS      
+                                2221                        PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+   R24  2215  2215                                2215  2215PRN / # OF OBS      
+                                      2214  2212            PRN / # OF OBS      
+                          2215  2215  2215                  PRN / # OF OBS      
+                                                            PRN / # OF OBS      
+    15.000                                                  INTERVAL            
+  2022     6    20     0     0    0.0000000     GPS         TIME OF FIRST OBS   
+  2022     6    20    23    59   45.0000000     GPS         TIME OF LAST OBS    
+                                                            END OF HEADER      
+ 22 06 20 00 00 00.0000000  0 49C05C07C10C19C20C21C22C28C36C37C40C43
+                                C45C46C56C58E01E04E05E09E13E15E24E31
+                                E34G05G07G08G13G14G15G17G18G20G23G24
+                                G28G30R01R02R07R08R09R10R11R12R17R18
+                                R19
+                  40367719.988                                    40367720.419  
+  40367718.546                                          11.909                  
+                         9.607           9.192                                  
+ 210205312.42106                                 170809073.68806 162544130.79006
+                                                        41.050                  
+                        37.700          40.250                  
+                  39181855.310                                    39181851.006  
+  39181851.646                                        -310.322                  
+                      -252.146        -239.956                                  
+ 204030258.34707                                 165791299.90907 157769153.85107
+                                                        43.500                  
+                        42.300          44.700                  
+                  38619091.668                                    38619088.825  
+  38619089.707                                         103.528                  
+                        83.940          79.904                                  
+ 201099801.72507                                 163410080.62607 155503159.84807
+                                                        45.400                  
+                        42.950          44.850                  
+                  22703880.509                    22703881.265    22703877.668  
+                                                     -2253.958                  
+     -1698.617       -1831.538                                                  
+ 118225152.17908                  89095025.67608  96067642.25108                
+                                                        52.100                  
+        53.650          50.650                                  
+                  26799027.917                    26799029.156    26799023.747  
+                                                     -3492.871                  
+     -2632.376       -2838.462                                                  
+ 139549625.54107                 105165230.80207 113395512.93306                
+                                                        45.900                  
+        44.550          38.100                                  
+                  25928039.806                    25928041.716    25928036.908  
+                                                      3134.254                  
+      2361.933        2546.749                                                  
+ 135014116.87207                 101747219.50007 109710023.71907                
+                                                        43.750                  
+        46.800          42.700                                  
+                  22524559.633                    22524557.680    22524554.730  
+                                                       955.799                  
+       720.246         776.597                                                  
+ 117291373.67308                  88391303.62409  95308857.85508                
+                                                        51.850                  
+        54.700          51.650                                  
+                  26799958.426                    26799961.592    26799960.606  
+                                                      1723.007                  
+      1298.347        1400.152                                                  
+ 139554406.47907                 105168807.58406 113399398.80806                
+                                                        42.100                  
+        41.250          39.650                                  
+                  22628360.845                    22628369.824    22628366.846  
+                                                      1814.604                  
+      1367.418        1474.424                                                  
+ 117831915.71408                  88798703.27009  95748116.03008                
+                                                        51.900                  
+        54.850          50.850                                  
+                  26371078.793                    26371086.337    26371083.989  
+                                                     -3161.969                  
+     -2382.942       -2569.287                                                  
+ 137321236.27707                 103485962.88607 111584817.84606                
+                                                        43.900                  
+        44.700          40.850                                  
+                  39090907.195                    39090908.399    39090906.585  
+                                                      -599.403                  
+      -451.795        -487.220                                                  
+ 203556665.12707                 153401194.45607 165406489.30707                
+                                                        47.300                  
+        46.800          43.200                                  
+                  27150693.300                    27150698.813    27150696.031  
+                                                      -696.706                  
+      -525.041        -566.078                                                  
+ 141380787.44607                 106545177.99207 114883466.96906                
+                                                        42.950                  
+        42.200          38.350                                  
+                  26191239.696                    26191251.749    26191249.899  
+                                                      3298.720                  
+      2486.003        2680.597                                                  
+ 136384683.16306                 102780121.00207 110823772.08206                
+                                                        41.550                  
+        43.050          40.800                                  
+                  22153135.728                    22153141.791    22153142.533  
+                                                     -1202.194                  
+      -905.949        -976.848                                                  
+ 115357302.74508                  86933848.20209  93737341.41708                
+                                                        51.850                  
+        55.300          51.650                                  
+                  38356727.187                                    38356730.715  
+                                                      -432.625                  
+                      -351.599                                                  
+ 199733618.76007                                 162299967.87207                
+                                                        46.200                  
+                        43.000                                  
+                  34826318.478                                                  
+                                                       601.640                  
+                                                                                
+ 181349774.76006                                                                
+                                                        41.800                  
+                                                                
+  26419164.586                                    26419168.597    26419165.769  
+  26419166.780    26419167.187       -2368.414                                  
+     -1768.572       -1922.406       -1814.742       -1791.666   138833701.49948
+                                 103674561.88708 112689716.96207 106379108.79708
+ 105026833.86808                        49.750                                  
+        48.350          46.850          48.050          51.200  
+  27150701.750                                    27150705.795    27150703.032  
+  27150704.194    27150704.695       -2694.539                                  
+     -2012.176       -2187.118       -2064.588       -2038.396   142677988.18548
+                                 106545319.12607 115810097.11407 109324727.12707
+ 107935032.15108                        49.050                                  
+        46.200          45.400          46.100          49.150  
+  24487034.788                                    24487038.480    24487033.273  
+  24487036.758    24487037.147        1760.402                                  
+      1314.596        1428.917        1348.903        1331.744   128680305.42748
+                                  96092489.78108 104448319.85708  98599237.95208
+  97345862.89209                        52.350                                  
+        53.250          52.250          52.950          56.150  
+  23619887.710                                    23619890.089    23619886.974  
+  23619888.910    23619889.045        -840.635                                  
+      -627.821        -682.399        -644.153        -635.988   124123463.73848
+                                  92689680.17509 100749608.00808  95107650.68209
+  93898664.95209                        53.850                                  
+        54.350          53.450          54.550          57.400  
+  28646753.408                                    28646759.490    28646756.609  
+  28646757.047    28646757.634        1638.284                                  
+      1223.185        1329.897        1255.435        1239.362   150539709.58646
+                                 112416044.81906 122191335.86706 115348617.99206
+ 113882315.92806                        40.400                                  
+        38.450          38.400          36.750          40.700  
+  27517660.323                                    27517667.475    27517661.764  
+  27517665.494    27517666.090        -640.271                                  
+      -478.127        -519.870        -490.606        -484.336   144606277.59947
+                                 107985238.72407 117375231.05607 110802238.85907
+ 109393734.81607                        45.400                                  
+        45.150          42.950          44.700          47.900  
+  25601159.523                                    25601162.388    25601159.967  
+  25601160.713    25601161.205        2754.612                                  
+      2057.053        2235.939        2110.718        2083.928   134535059.39748
+                                 100464533.84108 109200562.16408 103085337.80408
+ 101774935.84508                        52.000                                  
+        50.250          49.850          50.250          53.200  
+  23900383.535                                    23900387.209    23900381.847  
+  23900385.739    23900386.069         401.179                                  
+       299.600         325.614         307.378         303.488   125597450.84648
+                                  93790368.05908 101946015.58608  96237059.28008
+  95013716.19509                        53.100                                  
+        53.950          52.900          53.750          56.850  
+  28390578.330                                    28390585.932    28390580.863  
+  28390584.124    28390584.657       -2536.446                                  
+     -1894.213       -2058.917       -1943.525       -1919.010   149193493.32647
+                                 111410751.54707 121098620.78606 114317105.09207
+ 112863929.35507                        44.750                                  
+        43.050          41.850          42.300          45.700  
+  22042720.510    22042720.594                                                  
+                                     -2863.614       -2231.388                  
+                                                                 115835350.09308
+  90261351.97708                                                                
+                  22042719.923          51.850          51.900                  
+                                                                
+  24756606.609    24756606.962                                                  
+                                     -3102.848       -2417.805                  
+                                                                 130096958.93707
+ 101374316.50207                                                                
+                  24756606.540          44.750          44.600                  
+                                                                
+  24852433.207    24852437.552                    24852436.331                  
+                                     -1237.304        -964.134                  
+      -923.888                                                   130600433.40606
+ 101766578.37306                  97526301.61607                                
+                  24852436.637          41.200          41.250                  
+        45.000                                                  
+  20000935.694                                                                  
+                                       -43.091         -33.577                  
+                                                                 105105739.25208
+  81900622.17108                                                                
+                  20000933.744          51.750          49.450                  
+                                                                
+  21170544.364    21170544.081                    21170547.401                  
+                                        53.567          41.740                  
+        40.064                                                   111252070.49508
+  86689950.21107                  83077903.25809                                
+                  21170543.794          50.850          47.300                  
+        55.300                                                  
+  20978467.659    20978467.419                                                  
+                                      2121.770        1653.328                  
+                                                                 110242684.33708
+  85903419.35908                                                                
+                  20978466.842          51.350          48.000                  
+                                                                
+  25311123.594    25311125.114                                                  
+                                      2986.056        2326.799                  
+                                                                 133010852.27307
+ 103644823.57407                                                                
+                  25311124.646          43.750          44.250                  
+                                                                
+  24435344.456    24435346.336                    24435351.598                  
+                                     -1929.175       -1503.254                  
+     -1440.646                                                   128408612.81007
+ 100058688.81805                  95889574.59608                                
+                  24435345.841          43.450          35.800                  
+        49.800                                                  
+  24002091.283                                                                  
+                                     -3810.820       -2969.471                  
+                                                                 126131893.23907
+  98284639.07106                                                                
+                  24002091.679          45.750          38.250                  
+                                                                
+  24104980.346    24104982.000                    24104985.892                  
+                                      3017.580        2351.366                  
+      2253.515                                                   126672535.57407
+  98705877.49206                  94593154.60507                                
+                  24104981.631          45.350          40.850                  
+        47.400                                                  
+  23858415.038    23858418.826                    23858419.019                  
+                                      3539.728        2758.231                  
+      2643.184                                                   125376824.05107
+  97696266.91306                  93625594.02908                                
+                  23858418.307          45.850          39.900                  
+        48.400                                                  
+  21273197.424                                                                  
+                                      1472.005        1147.018                  
+                                                                 111791480.72708
+  87110281.17807                                                                
+                  21273195.969          52.000          46.050                  
+                                                                
+  22491034.575    22491036.635                    22491036.213                  
+                                     -2678.863       -2087.428                  
+     -2000.491                                                   118191324.65908
+  92097216.33508                  88259852.34108                                
+                  22491036.020          50.950          50.950                  
+        53.100                                                  
+  19403276.586    19403278.664                                                  
+                                      1241.273         965.435                  
+                                                                 103721713.28108
+  80672487.63407                                                                
+                  19403279.428          50.100          43.300                  
+                                                                
+  23232666.768    23232671.278                                                  
+                                      4136.265        3217.098                  
+                                                                 123973981.11407
+  96424226.76106                                                                
+                  23232671.477          47.500          41.200                  
+                                                                
+  24079764.337    24079768.251                                                  
+                                     -4286.503       -3333.954                  
+                                                                 128900930.78807
+ 100256318.44606                                                                
+                  24079768.078          43.350          40.500                  
+                                                                
+  20167953.737    20167954.280                                                  
+                                     -2589.118       -2013.759                  
+                                                                 107998562.50308
+  83998923.12908                                                                
+                  20167954.043          50.050          48.250                  
+                                                                
+  23281728.224    23281730.658                                                  
+                                     -4091.987       -3182.658                  
+                                                                 124323221.99007
+  96695896.79706                                                                
+                  23281730.807          47.300          40.750                  
+                                                                
+  19807095.992                                                                  
+                                     -2075.168                                  
+                                                                 105583062.40007
+                                                                                
+                                        47.750                                  
+                                                                
+  19855839.472    19855840.432    19855832.506                                  
+                                      2278.750        1772.364        1709.751  
+                                                                 106103672.96508
+  82525114.74508  79612562.09108                                                
+                  19855840.375          53.350          50.250          52.950  
+                                                                
+  24189388.627    24189394.770                                                  
+                                      4294.837        3340.436                  
+                                                                 129215390.31807
+ 100500886.30906                                                                
+                  24189394.790          45.850          38.600                  
+                                                                
+  24062326.974    24062330.571                                                  
+                                     -2950.087       -2294.513                  
+                                                                 128762379.00107
+ 100148520.60106                                                                
+                  24062330.236          42.850          37.750                  
+                                                                
+  23280969.410    23280973.313                                                  
+                                      -245.150        -190.671                  
+                                                                 124275409.14407
+  96658688.55006                                                                
+                  23280973.520          46.750          39.950                  
+                                                                
+  24056523.625    24056527.109                                                  
+                                      2591.916        2015.938                  
+                                                                 128686176.63005
+ 100089255.56006                                                                
+                  24056526.346          35.250          36.900                  
+                                                                
+ 22 06 20 00 00 15.0000000  0 49C05C07C10C19C20C21C22C28C36C37C40C43
+                                C45C46C56C58E01E04E05E09E13E15E24E31
+                                E34G05G07G08G13G14G15G17G18G20G23G24
+                                G28G30R01R02R07R08R09R10R11R12R17R18
+                                R19
+                  40367685.941                                    40367686.369  
+  40367684.491                                          11.982                  
+                         9.761           9.093                                  
+ 210205135.28506                                 170808929.75406 162543993.84406
+                                                        41.050                  
+                        37.100          40.200                  
+                  39182752.282                                    39182748.054  
+  39182748.708                                        -312.130                  
+                      -253.894        -241.547                                  
+ 204034929.26007                                 165795095.41107 157772765.69607
+                                                        43.550                  
+                        42.250          44.750                  
+                  38618797.054                                    38618794.192  
+  38618794.978                                         101.353                  
+                        82.193          78.299                                  
+ 201098267.22607                                 163408833.74007 155501973.30207
+                                                        45.550                  
+                        42.800          44.700                  
+                  22710381.944                    22710382.599    22710379.012  
+                                                     -2259.885                  
+     -1703.052       -1836.382                                                  
+ 118259006.56808                  89120538.47708  96095151.70808                
+                                                        52.250                  
+        53.800          50.500                                  
+                  26809090.580                    26809091.712    26809085.862  
+                                                     -3493.468                  
+     -2632.633       -2838.632                                                  
+ 139602023.52207                 105204718.14607 113438090.67606                
+                                                        46.400                  
+        43.000          38.000                                  
+                  25919014.483                    25919016.688    25919011.784  
+                                                      3132.142                  
+      2360.338        2545.037                                                  
+ 134967120.74107                 101711803.07707 109671835.55107                
+                                                        43.800                  
+        46.900          42.350                                  
+                  22521817.173                    22521815.289    22521812.339  
+                                                       948.509                  
+       714.680         770.636                                                  
+ 117277093.27708                  88380541.87209  95297253.87308                
+                                                        51.900                  
+        54.900          51.550                                  
+                  26795004.080                    26795007.312    26795006.252  
+                                                      1716.928                  
+      1293.869        1395.033                                                  
+ 139528608.07607                 105149365.77607 113378435.48306                
+                                                        43.500                  
+        42.800          40.850                                  
+                  22623142.194                    22623151.274    22623148.240  
+                                                      1808.955                  
+      1363.114        1469.821                                                  
+ 117804741.52508                  88778224.72609  95726034.80508                
+                                                        52.000                  
+        55.050          50.700                                  
+                  26380188.427                    26380195.841    26380193.466  
+                                                     -3162.452                  
+     -2383.378       -2569.943                                                  
+ 137368672.26807                 103521710.83507 111623363.48306                
+                                                        43.550                  
+        44.600          40.050                                  
+                  39092637.756                    39092638.802    39092636.961  
+                                                      -601.707                  
+      -453.640        -489.098                                                  
+ 203565676.17007                 153407985.23007 165413811.52707                
+                                                        47.200                  
+        46.700          42.850                                  
+                  27152711.060                    27152716.587    27152713.813  
+                                                      -704.187                  
+      -530.840        -572.268                                                  
+ 141391294.71807                 106553096.32106 114892005.00306                
+                                                        42.700                  
+        41.850          38.700                                  
+                  26181738.632                    26181750.617    26181748.869  
+                                                      3298.007                  
+      2485.285        2679.810                                                  
+ 136335208.62607                 102742836.87407 110783570.03706                
+                                                        42.350                  
+        43.200          41.250                                  
+                  22156607.382                    22156613.450    22156614.202  
+                                                     -1208.140                  
+      -910.511        -981.707                                                  
+ 115375380.63408                  86947471.77709  93752031.18208                
+                                                        51.700                  
+        55.450          51.400                                  
+                  38357976.116                                    38357979.667  
+                                                      -434.370                  
+                      -352.852                                                  
+ 199740122.54107                                 162305252.71107                
+                                                        46.750                  
+                        42.800                                  
+                  34824597.134                                                  
+                                                       593.655                  
+                                                                                
+ 181340810.39006                                                                
+                                                        41.500                  
+                                                                
+  26425930.688                                    26425934.663    26425931.677  
+  26425932.851    26425933.189       -2372.229                                  
+     -1771.532       -1925.534       -1817.658       -1794.638   138869257.04348
+                                 103701113.10508 112718576.98407 106406352.65007
+ 105053731.40408                        49.700                                  
+        48.250          47.000          47.800          50.950  
+  27158395.732                                    27158399.779    27158396.979  
+  27158398.141    27158398.588       -2696.191                                  
+     -2013.455       -2188.544       -2065.926       -2039.632   142718419.76848
+                                 106575511.52107 115842914.94107 109355707.14807
+ 107965618.35708                        49.800                                  
+        46.550          45.600          46.100          49.200  
+  24482014.322                                    24482018.004    24482012.762  
+  24482016.270    24482016.667        1757.266                                  
+      1312.155        1426.283        1346.454        1329.308   128653922.72148
+                                  96072788.43008 104426905.33508  98579022.64708
+  97325904.56309                        52.200                                  
+        53.450          52.350          52.950          56.150  
+  23622294.313                                    23622296.713    23622293.612  
+  23622295.526    23622295.675        -845.476                                  
+      -631.384        -686.291        -647.838        -639.613   124136110.62148
+                                  92699124.26809 100759873.33108  95117341.14709
+  93908232.23309                        53.700                                  
+        54.650          53.650          54.500          57.550  
+  28642085.270                                    28642091.517    28642088.683  
+  28642089.140    28642089.660        1632.489                                  
+      1218.988        1325.264        1250.852        1234.869   150515178.90246
+                                 112397726.43106 122171424.61006 115329821.76306
+ 113863758.62506                        39.600                                  
+        38.550          37.550          38.800          41.550  
+  27519498.646                                    27519505.652    27519499.797  
+  27519503.667    27519504.241        -647.527                                  
+      -483.603        -525.579        -496.233        -489.876   144615937.06647
+                                 107992451.93107 117383071.51007 110809640.24707
+ 109401042.11108                        45.900                                  
+        45.400          43.100          44.900          48.050  
+  25593301.987                                    25593304.816    25593302.396  
+  25593303.160    25593303.619        2750.987                                  
+      2054.303        2232.993        2107.983        2081.125   134493767.59748
+                                 100433699.07908 109167046.10808 103053698.65108
+ 101743698.89108                        51.850                                  
+        50.400          49.950          50.350          53.300  
+  23899248.163                                    23899251.828    23899246.473  
+  23899250.368    23899250.695         394.370                                  
+       294.486         320.094         302.217         298.332   125591484.51448
+                                  93785912.70309 101941172.79908  96232487.68908
+  95009202.72309                        53.100                                  
+        54.100          53.100          53.700          56.850  
+  28397823.064                                    28397830.694    28397825.783  
+  28397828.904    28397829.494       -2539.583                                  
+     -1896.473       -2061.396       -1945.931       -1921.185   149231564.69047
+                                 111439181.40907 121129522.83306 114346276.60407
+ 112892730.02907                        44.200                                  
+        42.950          40.600          42.750          45.800  
+  22050903.729    22050903.739                                                  
+                                     -2870.031       -2236.388                  
+                                                                 115878352.77908
+  90294860.55608                                                                
+                  22050903.036          51.550          51.400                  
+                                                                
+  24765464.453    24765464.785                                                  
+                                     -3103.449       -2418.272                  
+                                                                 130143506.86207
+ 101410587.60207                                                                
+                  24765464.381          45.400          45.400                  
+                                                                
+  24855977.678    24855982.062                    24855980.846                  
+                                     -1246.225        -971.086                  
+      -930.688                                                   130619060.04106
+ 101781092.59206                  97540211.10207                                
+                  24855981.231          40.700          40.350                  
+        44.700                                                  
+  20001069.159                                                                  
+                                       -50.319         -39.209                  
+                                                                 105106440.57708
+  81901168.66908                                                                
+                  20001067.177          51.600          49.750                  
+                                                                
+  21170405.499    21170405.237                    21170408.599                  
+                                        43.837          34.160                  
+        32.638                                                   111251340.96008
+  86689381.75607                  83077358.49109                                
+                  21170404.962          50.750          47.700                  
+        55.550                                                  
+  20972421.019    20972420.767                                                  
+                                      2115.157        1648.175                  
+                                                                 110210909.01608
+  85878659.38208                                                                
+                  20972420.179          51.050          48.300                  
+                                                                
+  25302600.622    25302602.170                                                  
+                                      2986.097        2326.833                  
+                                                                 132966063.32606
+ 103609923.14206                                                                
+                  25302601.534          37.900          38.300                  
+                                                                
+  24440861.261    24440862.936                    24440868.487                  
+                                     -1936.054       -1508.613                  
+     -1445.800                                                   128437603.16207
+ 100081278.72206                  95911223.21908                                
+                  24440862.405          45.350          38.050                  
+        50.250                                                  
+  24012970.938                                                                  
+                                     -3811.890       -2970.305                  
+                                                                 126189066.08207
+  98329189.31106                                                                
+                  24012971.235          44.850          37.500                  
+                                                                
+  24096374.541    24096376.128                    24096380.004                  
+                                      3012.275        2347.230                  
+      2249.365                                                   126627311.30707
+  98670637.84406                  94559383.29407                                
+                  24096375.728          46.150          40.650                  
+        47.100                                                  
+  23848314.752    23848318.326                    23848318.897                  
+                                      3537.727        2756.673                  
+      2641.677                                                   125323746.76307
+  97654908.01906                  93585958.45708                                
+                  23848317.736          44.300          39.850                  
+        48.750                                                  
+  21269008.122                                                                  
+                                      1463.481        1140.374                  
+                                                                 111769465.76808
+  87093126.67507                                                                
+                  21269006.690          51.900          46.150                  
+                                                                
+  22498686.276    22498688.277                    22498687.932                  
+                                     -2682.211       -2090.033                  
+     -2003.030                                                   118231534.43008
+  92128548.63008                  88289879.11908                                
+                  22498687.602          51.100          51.150                  
+        53.350                                                  
+  19399808.750    19399810.780                                                  
+                                      1230.556         957.100                  
+                                                                 103703175.57108
+  80658069.42507                                                                
+                  19399811.589          50.000          43.200                  
+                                                                
+  23221041.712    23221046.162                                                  
+                                      4135.080        3216.174                  
+                                                                 123911947.79508
+  96375978.64806                                                                
+                  23221046.337          48.450          40.800                  
+                                                                
+  24091778.336    24091782.786                                                  
+                                     -4288.397       -3335.434                  
+                                                                 128965244.58107
+ 100306340.12306                                                                
+                  24091782.599          43.250          37.550                  
+                                                                
+  20175219.390    20175219.819                                                  
+                                     -2598.280       -2020.884                  
+                                                                 108037468.96508
+  84029183.70108                                                                
+                  20175219.618          50.650          48.250                  
+                                                                
+  23293225.499    23293227.956                                                  
+                                     -4093.709       -3183.998                  
+                                                                 124384616.86307
+  96743648.32406                                                                
+                  23293228.072          46.850          40.900                  
+                                                                
+  19812948.574                                                                  
+                                     -2084.471                                  
+                                                                 105614259.54908
+                                                                                
+                                        48.000                                  
+                                                                
+  19849457.051    19849457.996    19849450.006                                  
+                                      2268.851        1764.666        1702.418  
+                                                                 106069567.38208
+  82498588.21408  79586971.75308                                                
+                  19849457.942          53.300          50.350          53.250  
+                                                                
+  24177330.391    24177336.489                                                  
+                                      4293.514        3339.407                  
+                                                                 129150977.71607
+ 100450787.72906                                                                
+                  24177336.538          45.850          39.400                  
+                                                                
+  24070607.656    24070611.159                                                  
+                                     -2957.658       -2300.402                  
+                                                                 128806689.85507
+ 100182984.56006                                                                
+                  24070610.792          42.050          38.850                  
+                                                                
+  23281677.036    23281681.012                                                  
+                                      -258.182        -200.809                  
+                                                                 124279186.40707
+  96661626.41606                                                                
+                  23281681.133          45.800          40.250                  
+                                                                
+  24049268.303    24049271.755                                                  
+                                      2582.512        2008.619                  
+                                                                 128647366.02705
+ 100059069.53305                                                                
+                  24049270.989          34.000          35.750                  
+                                                                
+ 22 06 20 00 00 30.0000000  0 49C05C07C10C19C20C21C22C28C36C37C40C43
+                                C45C46C56C58E01E04E05E09E13E15E24E31
+                                E34G05G07G08G13G14G15G17G18G20G23G24
+                                G28G30R01R02R07R08R09R10R11R12R17R18
+                                R19
+                  40367651.538                                    40367651.996  
+  40367650.115                                          12.196                  
+                        10.113           9.411                                  
+ 210204956.28906                                 170808784.29306 162543855.41706
+                                                        41.100                  
+                        37.250          40.350                  
+                  39183655.483                                    39183651.297  
+  39183651.959                                        -314.407                  
+                      -255.634        -243.157                                  
+ 204039632.53307                                 165798917.20907 157776402.55607
+                                                        43.950                  
+                        42.100          44.850                  
+                  38618508.738                                    38618505.859  
+  38618506.595                                          99.197                  
+                        80.616          76.614                                  
+ 201096765.65807                                 163407613.57307 155500812.18507
+                                                        45.750                  
+                        42.850          45.250                  
+                  22716900.706                    22716901.296    22716897.734  
+                                                     -2265.751                  
+     -1707.513       -1841.196                                                  
+ 118292951.35808                  89146119.40608  96122734.63008                
+                                                        52.400                  
+        53.500          50.500                                  
+                  26819154.732                    26819155.747    26819149.866  
+                                                     -3493.999                  
+     -2633.053       -2839.130                                                  
+ 139654430.36007                 105244212.16106 113480675.50606                
+                                                        43.750                  
+        40.800          39.750                                  
+                  25909995.678                    25909997.967    25909993.008  
+                                                      3130.150                  
+      2358.716        2543.320                                                  
+ 134920157.83407                 101676411.69607 109633674.38207                
+                                                        44.650                  
+        46.850          42.950                                  
+                  22519096.232                    22519094.385    22519091.427  
+                                                       941.080                  
+       709.141         764.651                                                  
+ 117262924.80908                  88369864.46709  95285740.83908                
+                                                        52.050                  
+        54.700          51.500                                  
+                  26790067.150                    26790070.468    26790069.343  
+                                                      1711.163                  
+      1289.442        1390.347                                                  
+ 139502900.18706                 105129992.18906 113357545.69006                
+                                                        40.900                  
+        41.350          39.750                                  
+                  22617940.304                    22617949.468    22617946.403  
+                                                      1803.112                  
+      1358.768        1465.152                                                  
+ 117777654.51808                  88757811.85009  95704024.39708                
+                                                        51.800                  
+        54.800          50.650                                  
+                  26389300.199                    26389307.643    26389305.239  
+                                                     -3163.294                  
+     -2383.926       -2570.266                                                  
+ 137416119.73907                 103557467.43707 111661918.42306                
+                                                        43.100                  
+        44.400          40.550                                  
+                  39094375.453                    39094376.344    39094374.517  
+                                                      -604.307                  
+      -455.408        -490.939                                                  
+ 203574724.59207                 153414804.15607 165421164.10907                
+                                                        47.300                  
+        46.400          42.900                                  
+                  27154751.223                    27154756.623    27154754.044  
+                                                      -711.855                  
+      -536.467        -578.527                                                  
+ 141401918.45606                 106561102.42306 114900637.67906                
+                                                        41.550                  
+        40.700          37.450                                  
+                  26172240.543                    26172252.387    26172250.879  
+                                                      3296.958                  
+      2484.657        2678.940                                                  
+ 136285749.93007                 102705564.68606 110743380.86606                
+                                                        43.000                  
+        41.850          41.750                                  
+                  22160096.629                    22160102.741    22160103.508  
+                                                     -1214.118                  
+      -915.033        -986.617                                                  
+ 115393550.22508                  86961164.45709  93766795.46308                
+                                                        51.950                  
+        55.200          51.400                                  
+                  38359230.471                                    38359233.921  
+                                                      -436.094                  
+                      -354.449                                                  
+ 199746654.04807                                 162310560.10307                
+                                                        46.950                  
+                        42.550                                  
+                  34822898.718                                                  
+                                                       585.873                  
+                                                                                
+ 181331966.06806                                                                
+                                                        41.950                  
+                                                                
+  26432707.881                                    26432711.747    26432708.710  
+  26432709.969    26432710.283       -2376.062                                  
+     -1774.332       -1928.590       -1820.616       -1797.435   138904870.87248
+                                 103727707.84207 112747484.31907 106433641.16908
+ 105080673.03008                        49.400                                  
+        47.900          47.000          48.150          51.150  
+  27166095.313                                    27166099.273    27166096.340  
+  27166097.574    27166097.989       -2698.113                                  
+     -2014.889       -2190.140       -2067.352       -2041.131   142758880.32548
+                                 106605725.54407 115875756.28507 109386709.37007
+ 107996226.48108                        49.750                                  
+        46.450          44.900          46.400          49.400  
+  24477003.404                                    24477007.085    24477001.780  
+  24477005.351    24477005.739        1754.106                                  
+      1309.801        1423.721        1344.013        1326.902   128627590.22248
+                                  96053124.56808 104405531.56708  98558845.81208
+  97305984.21609                        52.200                                  
+        53.200          52.250          53.250          56.300  
+  23624714.859                                    23624717.315    23624714.239  
+  23624716.093    23624716.273        -850.252                                  
+      -634.956        -690.139        -651.515        -643.237   124148830.90948
+                                  92708623.17409 100770198.23008  95127087.85209
+  93917855.03709                        53.400                                  
+        54.300          53.350          54.700          57.550  
+  28637434.344                                    28637440.295    28637437.768  
+  28637438.423    28637439.005        1626.652                                  
+      1214.741        1320.233        1246.302        1230.631   150490738.85046
+                                 112379475.75706 122151586.93706 115311095.00306
+ 113845269.89706                        36.800                                  
+        36.550          36.750          37.750          40.200  
+  27521357.730                                    27521364.573    27521358.853  
+  27521362.695    27521363.256        -654.674                                  
+      -488.947        -531.441        -501.705        -495.296   144625706.03747
+                                 107999746.93207 117391000.86107 110817125.55607
+ 109408432.26908                        46.000                                  
+        44.800          42.650          45.250          48.050  
+  25585454.946                                    25585457.742    25585455.368  
+  25585456.085    25585456.544        2747.436                                  
+      2051.649        2230.043        2105.185        2078.416   134452531.02648
+                                 100402905.55608 109133574.88208 103022101.82508
+ 101712503.71508                        51.600                                  
+        50.150          49.850          50.600          53.450  
+  23898132.561                                    23898136.212    23898130.876  
+  23898134.766    23898135.086         387.554                                  
+       289.409         314.575         296.949         293.164   125585622.04548
+                                  93781534.91108 101936414.31808  96227995.69308
+  95004767.82809                        52.750                                  
+        53.700          52.800          53.850          56.900  
+  28405076.770                                    28405084.416    28405079.367  
+  28405082.651    28405083.160       -2542.535                                  
+     -1898.699       -2063.750       -1948.241       -1923.446   149269682.86847
+                                 111467646.24407 121160462.90506 114375484.00407
+ 112921566.14607                        43.800                                  
+        42.200          39.400          42.850          45.450  
+  22059105.646    22059105.596                                                  
+                                     -2876.342       -2241.306                  
+                                                                 115921453.85308
+  90328445.80308                                                                
+                  22059104.938          51.400          51.300                  
+                                                                
+  24774324.144    24774324.515                                                  
+                                     -3103.970       -2418.678                  
+                                                                 130190065.12507
+ 101446866.74907                                                                
+                  24774324.101          44.000          43.800                  
+                                                                
+  24859548.026    24859552.428                    24859551.174                  
+                                     -1255.188        -978.070                  
+      -937.234                                                   130637822.15406
+ 101795712.40606                  97554221.75307                                
+                  24859551.568          40.300          40.250                  
+        44.600                                                  
+  20001223.840                                                                  
+                                       -57.588         -44.874                  
+                                                                 105107253.37008
+  81901802.01708                                                                
+                  20001221.833          51.400          50.100                  
+                                                                
+  21170295.184    21170294.911                    21170298.328                  
+                                        33.892          26.410                  
+        25.246                                                   111250761.42108
+  86688930.17907                  83076925.72709                                
+                  21170294.667          50.300          47.700                  
+        55.250                                                  
+  20966393.813    20966393.525                                                  
+                                      2108.351        1642.871                  
+                                                                 110179235.74408
+  85853978.92008                                                                
+                  20966392.921          50.700          48.650                  
+                                                                
+  25294079.177    25294079.853                                                  
+                                      2984.675        2325.721                  
+                                                                                
+                                                                                
+                  25294080.188          35.600          33.550                  
+                                                                
+  24446398.024    24446399.559                    24446405.243                  
+                                     -1942.925       -1513.967                  
+     -1450.919                                                   128466698.04607
+ 100103950.06306                  95932949.88408                                
+                  24446399.230          46.200          36.850                  
+        49.250                                                  
+  24023854.059                                                                  
+                                     -3813.075       -2971.228                  
+                                                                 126246256.94507
+  98373753.59906                                                                
+                  24023854.284          44.800          38.250                  
+                                                                
+  24087784.770    24087786.166                    24087789.958                  
+                                      3006.651        2342.846                  
+      2245.296                                                   126582171.44107
+  98635463.94906                  94525674.95907                                
+                  24087785.723          45.650          40.200                  
+        46.200                                                  
+  23838220.675    23838224.124                    23838224.962                  
+                                      3535.533        2754.964                  
+      2639.970                                                   125270702.53807
+  97613574.89606                  93546347.57508                                
+                  23838223.530          42.350          41.200                  
+        48.400                                                  
+  21264843.687                                                                  
+                                      1454.741        1133.565                  
+                                                                 111747581.52508
+  87076074.03407                                                                
+                  21264842.294          51.750          46.600                  
+                                                                
+  22506347.924    22506349.857                    22506349.659                  
+                                     -2685.680       -2092.736                  
+     -2005.554                                                   118271796.32608
+  92159921.54608                  88319944.81308                                
+                  22506349.136          49.800          49.900                  
+        53.200                                                  
+  19396371.317    19396373.383                                                  
+                                      1219.847         948.771                  
+                                                                 103684800.68608
+  80643777.86207                                                                
+                  19396374.158          49.950          43.250                  
+                                                                
+  23209420.279    23209424.631                                                  
+                                      4133.821        3215.195                  
+                                                                 123849933.78507
+  96327745.53506                                                                
+                  23209424.811          47.900          41.000                  
+                                                                
+  24103797.783    24103801.839                                                  
+                                     -4290.099       -3336.738                  
+                                                                 129029584.61807
+ 100356382.38305                                                                
+                  24103801.698          47.200          34.300                  
+                                                                
+  20182510.899    20182511.259                                                  
+                                     -2607.407       -2027.983                  
+                                                                 108076513.97508
+  84059552.03908                                                                
+                  20182511.072          50.900          48.200                  
+                                                                
+  23304727.314    23304729.782                                                  
+                                     -4095.248       -3185.195                  
+                                                                 124446035.92207
+  96791418.65206                                                                
+                  23304729.929          46.700          41.550                  
+                                                                
+  19818827.627                                                                  
+                                     -2093.775                                  
+                                                                 105645598.35207
+                                                                                
+                                        47.800                                  
+                                                                
+  19843102.559    19843103.437    19843095.421                                  
+                                      2258.990        1756.993        1694.957  
+                                                                 106035610.98608
+  82472177.70708  79561493.35308                                                
+                  19843103.391          53.100          49.900          52.850  
+                                                                
+  24165276.589    24165282.831                                                  
+                                      4292.012        3338.239                  
+                                                                 129086588.95707
+ 100400707.69106                                                                
+                  24165282.847          45.900          39.600                  
+                                                                
+  24078910.086    24078913.673                                                  
+                                     -2965.415       -2306.435                  
+                                                                 128851117.61407
+ 100217539.41706                                                                
+                  24078913.260          43.150          37.250                  
+                                                                
+  23282421.410    23282425.402                                                  
+                                      -271.220        -210.948                  
+                                                                 124283160.23707
+  96664717.15506                                                                
+                  23282425.546          46.300          40.400                  
+                                                                
+  24042039.684    24042043.077                                                  
+                                      2573.782        2001.832                  
+                                                                 128608697.56505
+ 100028994.07905                                                                
+                  24042042.353          34.400          35.750                  
+                                                                

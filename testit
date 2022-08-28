@@ -1,10 +1,9 @@
 #!/bin/csh
-# this version allows up to 60 satellites and 20 observation types, including Beidou
-# only two epochs of data are in the file so as to keep file size small
-# other changes: sp3 files can now cross midnite and extend beyond 23 hours and 45 minutes. 
-# This allows the use of rapid sp3 files.
-# all data with elev > 5
-./gnssSNR.e  at013620.18o.test at013620.18.snr88  gbm20335.sp3  88
-# all data between 5 and 30 degrees elev 
-#./gnssSNR.e  at013620.18o.test at013620.18.snr98  gbm20335.sp3  98
-# if you have other regions you want to use, change write_gnss_to_file.f
+#./gnssSNR.e  at013620.18o.test at013620.18.snr  gbm20335.sp3  88
+./gnssSNR.e gwes0010.19o gwes0010.snr igs20342.sp3  99 
+exit
+./gnssSNR.e sc021500.22o sc021500.snr igs22121.sp3  99 
+./gnssSNR.e mchn1710.22o mchn1710.snr gfu22151_00.sp3 99 
+./gnssSNR.e sc021500.22o sc021500.snr gfz22121.sp3 99 
+# this should exit - too many observables
+./gnssSNR.e vlis1710.22o vlis1710.snr gfu22151_00.sp3 99 
